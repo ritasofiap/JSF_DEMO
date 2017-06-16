@@ -9,6 +9,32 @@ public class Navigator {
     private String name;
     private boolean disabled;
 
-	<... Getters and Setters for “name” and “disabled” …>
+    
+    
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public boolean isDisabled() {
+		return disabled;
+	}
+
+
+
+	public void setDisabled(boolean disabled) {
+		this.disabled = disabled;
+	}
+
+
+
+	//Getters and Setters for “name” and “disabled” …>
 }
 
