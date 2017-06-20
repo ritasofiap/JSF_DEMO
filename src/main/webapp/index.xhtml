@@ -7,6 +7,23 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	</h:head>
 	<h:body>
+		TESTE CARS
+		
+		<h:form>
+    <p:growl id="messages" showDetail="true"/>
+ 
+    <p:menuButton value="Options">
+        <p:menuitem value="Save" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk"/>
+        <p:menuitem value="Update" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        <p:menuitem value="Delete" actionListener="#{menuView.delete}" ajax="false" icon="ui-icon-close"/>
+        <p:separator />
+        <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink"/>
+    </p:menuButton>
+</h:form>
+		
+		
+		
+		
 		
 		<p:dataTable var="car" value="#{dtBasicView.cars}">
     <p:column headerText="Id">
@@ -25,6 +42,56 @@
         <h:outputText value="#{car.color}" />
     </p:column>
 </p:dataTable>
+
+
+
+<h:form>
+    <h:panelGrid columns="2" cellpadding="5" styleClass="ui-grid">
+        <h:outputLabel for="basic" value="Basic Spinner: " />
+        <p:spinner id="basic" value="#{spinnerView.number1}" />
+ 
+        <h:outputLabel for="step" value="Step Factor: " />
+        <p:spinner id="step" value="#{spinnerView.number2}" stepFactor="0.25" />
+ 
+        <h:outputLabel for="minMax" value="Min/Max: " />
+        <p:spinner id="minMax" value="#{spinnerView.number3}" min="0" max="100" />
+ 
+        <h:outputLabel for="prefix" value="Prefix: " />
+        <p:spinner id="prefix" value="#{spinnerView.number4}" prefix="$" min="0" />
+ 
+        <h:outputLabel for="ajaxSpinner" value="Ajax Spinner: " />
+        <p:outputPanel>
+            <p:spinner id="ajaxSpinner" value="#{spinnerView.number5}">
+                <p:ajax update="ajaxSpinnerValue" process="@this" />
+            </p:spinner>
+            <h:outputText id="ajaxSpinnerValue" value="#{spinnerView.number5}" style="padding-left: 10px" />
+        </p:outputPanel>
+    </h:panelGrid>
+ 
+    <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()" />
+ 
+    <p:dialog header="Values" widgetVar="dlg" showEffect="fold" hideEffect="fold">
+        <h:panelGrid id="display" columns="2" cellpadding="5">
+            <h:outputText value="Value 1: " />
+            <h:outputText value="#{spinnerView.number1}" />
+ 
+            <h:outputText value="Value 2: " />
+            <h:outputText value="#{spinnerView.number2}" />
+ 
+            <h:outputText value="Value 3: " />
+            <h:outputText value="#{spinnerView.number3}" />
+ 
+            <h:outputText value="Value 4: " />
+            <h:outputText value="#{spinnerView.number4}" />
+ 
+            <h:outputText value="Value 5: " />
+            <h:outputText value="#{spinnerView.number5}" />
+        </h:panelGrid>
+    </p:dialog>
+</h:form>
+
+
+
 		
 	</h:body>
 </html>
