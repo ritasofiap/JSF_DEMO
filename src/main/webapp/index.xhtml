@@ -7,13 +7,24 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	</h:head>
 	<h:body>
-		<h:form>
-			<h:inputText value="#{navigator.name}" />
-			<p:selectOneRadio value="#{navigator.disabled}" />
-				<f:selectItem itemValue="true" itemLabel="Disabled" />
-				<f:selectItem itemValue="false" itemLabel="Enabled" />
-			</h:selectOneRadio>
-			<h:commandButton value="Say Hello" action="result" />
-		</h:form>
+		
+		<p:dataTable var="car" value="#{dtBasicView.cars}">
+    <p:column headerText="Id">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Year">
+        <h:outputText value="#{car.year}" />
+    </p:column>
+ 
+    <p:column headerText="Brand">
+        <h:outputText value="#{car.brand}" />
+    </p:column>
+ 
+    <p:column headerText="Color">
+        <h:outputText value="#{car.color}" />
+    </p:column>
+</p:dataTable>
+		
 	</h:body>
 </html>
