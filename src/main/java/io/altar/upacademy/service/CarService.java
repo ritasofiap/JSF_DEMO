@@ -19,29 +19,22 @@ public class CarService {
     private final static String[] brands;
      
     static {
-        colors = new String[10];
-        colors[0] = "Black";
-        colors[1] = "White";
-        colors[2] = "Green";
-        colors[3] = "Red";
-        colors[4] = "Blue";
-        colors[5] = "Orange";
-        colors[6] = "Silver";
-        colors[7] = "Yellow";
-        colors[8] = "Brown";
-        colors[9] = "Maroon";
-         
+        colors = new String[3];
+        colors[0] = "6";
+        colors[1] = "13";
+        colors[2] = "23";
+     
         brands = new String[10];
-        brands[0] = "BMW";
-        brands[1] = "Mercedes";
-        brands[2] = "Volvo";
-        brands[3] = "Audi";
-        brands[4] = "Renault";
-        brands[5] = "Fiat";
-        brands[6] = "Volkswagen";
-        brands[7] = "Honda";
-        brands[8] = "Jaguar";
-        brands[9] = "Ford";
+        brands[0] = "PS4";
+        brands[1] = "Wii U";
+        brands[2] = "Xbox One";
+        brands[3] = "PSP";
+        brands[4] = "Nintendo Switch";
+        brands[5] = "Nintendo 3DS";
+        brands[6] = "PS3";
+        brands[7] = "Wii";
+        brands[8] = "PC";
+        brands[9] = "Mac";
     }
      
     public List<Car> createCars(int size) {
@@ -58,11 +51,11 @@ public class CarService {
     }
      
     private int getRandomYear() {
-        return (int) (Math.random() * 50 + 1960);
+        return (int) (Math.random() * 3 + 10);
     }
      
     private String getRandomColor() {
-        return colors[(int) (Math.random() * 10)];
+        return colors[(int) (Math.random() * 3)];
     }
      
     private String getRandomBrand() {
@@ -70,7 +63,7 @@ public class CarService {
     }
      
     public int getRandomPrice() {
-        return (int) (Math.random() * 100000);
+        return (int) (Math.random() * 50 + 250);
     }
      
     public boolean getRandomSoldState() {

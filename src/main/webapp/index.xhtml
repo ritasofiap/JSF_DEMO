@@ -18,7 +18,7 @@
 		<h1>Stock Management</h1> 
 			
 <p:dataTable var="car" value="#{dtBasicView.cars}">
- 
+ <!--  
     <p:column headerText="ID">
     <h:outputText value="" />n
     </p:column>
@@ -38,6 +38,29 @@
      <p:column headerText="PVP">
          <h:outputText value="" />$
      </p:column>
+     -->
+     <p:column headerText="ID">
+        <h:outputText value="#{car.randomId}" />
+    </p:column>
+ 
+    <p:column headerText="Nome">
+        <h:outputText value="#{car.randomBrand}" />
+    </p:column>
+    
+    <p:column headerText="Val">
+        <h:outputText value="#{car.randomYear}" />
+    </p:column>
+  
+    <p:column headerText="IVA">
+        <h:outputText value="#{car.randomColor}" />
+    </p:column>
+    
+     <p:column headerText="PVP">
+        <h:outputText value="#{car.randomPrice}" />
+    </p:column>
+     
+     
+     
     
 </p:dataTable>
 
