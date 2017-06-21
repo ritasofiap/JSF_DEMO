@@ -1,4 +1,4 @@
-package io.altar.upacademy.domain;
+package io.altar.upacademy;
 
 public class Car {
 

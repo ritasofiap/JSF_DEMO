@@ -2,48 +2,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	>
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<link type="text/css" rel="stylesheet"
+		  href="src/main/java/resources/css.css" />
 	</h:head>
 	<h:body>
-		TESTE CARS
+		
+		<h1>TESTE</h1> 
 		
 		<h:form>
     <p:growl id="messages" showDetail="true"/>
  
-    <p:menuButton value="Options">
-        <p:menuitem value="Save" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk"/>
-        <p:menuitem value="Update" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
-        <p:menuitem value="Delete" actionListener="#{menuView.delete}" ajax="false" icon="ui-icon-close"/>
-        <p:separator />
-        <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink"/>
+    <p:menuButton value="Menu">
+        <p:menuitem value="Produtos" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk"/>
+        <p:menuitem value="Prateleiras" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+       
     </p:menuButton>
 </h:form>
-		
-		
-		
-		
-		
+	
 		<p:dataTable var="car" value="#{dtBasicView.cars}">
-    <p:column headerText="Id">
-        <h:outputText value="#{car.id}" />
+    <p:column headerText="ID">
+    <h:outputText value="" />n
     </p:column>
  
-    <p:column headerText="Year">
-        <h:outputText value="#{car.year}" />
+    <p:column headerText="Nome">
+        <h:outputText value="" />a
+    
     </p:column>
  
-    <p:column headerText="Brand">
-        <h:outputText value="#{car.brand}" />
+    <p:column headerText="Val">
+        <h:outputText value="" />$
+    
     </p:column>
  
-    <p:column headerText="Color">
-        <h:outputText value="#{car.color}" />
+    <p:column headerText="IVA">
+        <h:outputText value="" />%
+    
     </p:column>
+    
+     <p:column headerText="PVP">
+         <h:outputText value="" />$
+     
+    </p:column>
+    
 </p:dataTable>
 
+<h:outputText value="&#160;" />
 
+<h:outputText value="Adicionar produto/prateleira" /> 
 
 <h:form>
     <h:panelGrid columns="2" cellpadding="5" styleClass="ui-grid">

@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.UUID;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import io.altar.upacademy.domain.Car;
+
+import io.altar.upacademy.Car;
  
 @ManagedBean(name = "carService")
 @ApplicationScoped

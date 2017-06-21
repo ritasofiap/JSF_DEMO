@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import io.altar.upacademy.domain.Car;
+
 import io.altar.upacademy.service.CarService;
  
 @ManagedBean(name="dtBasicView")
@@ -21,7 +21,7 @@ public class BasicView implements Serializable {
  
     @PostConstruct
     public void init() {
-        cars = service.createCars(10);
+        cars = service.createCars(5);
     }
      
     public List<Car> getCars() {
