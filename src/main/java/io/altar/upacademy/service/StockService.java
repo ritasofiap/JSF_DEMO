@@ -8,11 +8,11 @@ import java.util.UUID;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import io.altar.upacademy.Car;
+import io.altar.upacademy.Stock;
  
-@ManagedBean(name = "carService")
+@ManagedBean(name = "stockService")
 @ApplicationScoped
-public class CarService {
+public class StockService {
      
     private final static String[] colors;
      
@@ -37,10 +37,10 @@ public class CarService {
         brands[9] = "Gameboy";
     }
      
-    public List<Car> createCars(int size) {
-        List<Car> list = new ArrayList<Car>();
+    public List<Stock> createStocks(int size) {
+        List<Stock> list = new ArrayList<Stock>();
         for(int i = 0 ; i < size ; i++) {
-            list.add(new Car(getRandomId(), getRandomBrand(), getRandomYear(), getRandomColor(), getRandomPrice(), getRandomSoldState()));
+            list.add(new Stock(getRandomId(), getRandomBrand(), getRandomYear(), getRandomColor(), getRandomPrice(), getRandomSoldState()));
         }
          
         return list;

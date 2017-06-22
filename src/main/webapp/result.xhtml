@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 		<h:outputStylesheet name="css/style.css"/>
@@ -11,30 +12,32 @@
 	<h:body>
 		
 		
-<header>
-<h1>Stock Management</h1> 
-</header>		
+	<div id="header">
+		<ui:insert name="header" >
+		  <ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>		
 		
-<p:dataTable var="car" value="#{dtBasicView.cars}">
+<p:dataTable var="stock" value="#{dtBasicView.stocks}">
 
      <p:column headerText="ID">
-        <h:outputText value="#{car.randomId}" />
+        <h:outputText value="#{stock.randomId}" />
     </p:column>
  
     <p:column headerText="Nome">
-        <h:outputText value="#{car.randomBrand}" />
+        <h:outputText value="#{stock.randomBrand}" />
     </p:column>
     
     <p:column headerText="Val">
-        <h:outputText value="#{car.randomYear}" />
+        <h:outputText value="#{stock.randomYear}" />
     </p:column>
   
-    <p:column headerText="IVA">
-        <h:outputText value="#{car.randomColor}" />
+    <p:column headerText="IVA %">
+        <h:outputText value="#{stock.randomColor}" />
     </p:column>
     
-     <p:column headerText="PVP">
-        <h:outputText value="#{car.randomPrice}" />
+     <p:column headerText="PVP $">
+        <h:outputText value="#{stock.randomPrice}" />
     </p:column>  
 </p:dataTable>
 
@@ -95,7 +98,11 @@
     </p:dialog>
 </h:form>
 
-
+<div id="footer">
+		<ui:insert name="footer" >
+		  <ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	    </div>
 
 	</h:body>
 </html>

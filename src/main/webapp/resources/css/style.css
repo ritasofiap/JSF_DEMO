@@ -1,9 +1,18 @@
 @CHARSET "UTF-8";
 
-h1, h2 {
+h1 {
 	font-family: arial;
 	color: #2190d9;
-	/*	background-color: black;*/
+}
+
+h2 {
+	font-family: arial;
+	color: #2190d9;
+}
+
+footer {
+		margin-top:20px;
+		font-family: arial;
 	
 }
 

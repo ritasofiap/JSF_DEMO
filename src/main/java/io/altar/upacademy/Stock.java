@@ -4,9 +4,9 @@ import javax.inject.Named;
 //import javax.enterprise.context.RequestScoped;
 
 
-@Named("Car")
+@Named("Stock")
 //@RequestScoped
-public class Car {
+public class Stock {
 
 	private String randomId;
 	private String randomBrand; //Nome
@@ -15,7 +15,7 @@ public class Car {
 	private int randomPrice; //PVP
 	private boolean randomSoldState; //nada
 	
-	public Car(String randomId, String randomBrand, int randomYear, String randomColor, int randomPrice, boolean randomSoldState) {
+	public Stock(String randomId, String randomBrand, int randomYear, String randomColor, int randomPrice, boolean randomSoldState) {
 		this.randomId = randomId;
 		this.randomBrand = randomBrand;
 		this.randomYear = randomYear;
