@@ -33,8 +33,8 @@ public class CarService {
         brands[5] = "Nintendo 3DS";
         brands[6] = "PS3";
         brands[7] = "Wii";
-        brands[8] = "PC";
-        brands[9] = "Mac";
+        brands[8] = "Sega";
+        brands[9] = "Gameboy";
     }
      
     public List<Car> createCars(int size) {

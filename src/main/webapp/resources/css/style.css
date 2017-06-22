@@ -1,12 +1,15 @@
 @CHARSET "UTF-8";
 
-h1 {
+h1, h2 {
 	font-family: arial;
+	color: #2190d9;
 	/*	background-color: black;*/
 	
 }
 
-.form {
+/* {
 	font-family: arial;
-	/*background-color: black;*/
-}
+	color: #0074b7;
+	
+	background-color: black;
+}*/

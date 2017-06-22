@@ -1,16 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html" 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<h:outputStylesheet name="css/style.css"/>
+		
 	</h:head>
 	<h:body>
-		<h3>Hello #{navigator.name}!</h3>
-		<h:form>
-			<h:inputText value="Text 1" disabled="#{navigator.disabled}" /><br />
-			<h:inputTextarea value="Big text 2" disabled="#{navigator.disabled}" /><br />
-			<h:commandLink value="« Back" action = "index" />
-		</h:form>
+		
+		
+<header>
+<h1>Stock Management</h1> 
+</header>		
+		
+<p:dataTable var="car" value="#{dtBasicView.cars}">
+
+     <p:column headerText="ID">
+        <h:outputText value="#{car.randomId}" />
+    </p:column>
+ 
+    <p:column headerText="Nome">
+        <h:outputText value="#{car.randomBrand}" />
+    </p:column>
+    
+    <p:column headerText="Val">
+        <h:outputText value="#{car.randomYear}" />
+    </p:column>
+  
+    <p:column headerText="IVA">
+        <h:outputText value="#{car.randomColor}" />
+    </p:column>
+    
+     <p:column headerText="PVP">
+        <h:outputText value="#{car.randomPrice}" />
+    </p:column>  
+</p:dataTable>
+
+<p></p>
+
+
+	<p:button outcome="index" value="Back" >
+	</p:button>
+	
+
+<p></p>
+
+
+
+<p></p>
+<p></p>
+
+<h2>Adicionar produto/prateleira...?</h2>
+<p></p>
+
+
+<h:form>
+    <h:panelGrid columns="2" cellpadding="5" styleClass="ui-grid">
+        <h:outputLabel for="basic" value="Nome: " />
+        <p:spinner id="basic" value="#{spinnerView.number1}" />
+ 
+        <h:outputLabel for="step" value="Val: " />
+        <p:spinner id="step" value="#{spinnerView.number2}" stepFactor="0.25" />
+ 
+        <h:outputLabel for="minMax" value="IVA: " />
+        <p:spinner id="minMax" value="#{spinnerView.number3}" min="0" max="100" />
+ 
+        <h:outputLabel for="prefix" value="PVP: " />
+        <p:spinner id="prefix" value="#{spinnerView.number4}" prefix="$" min="0" />
+ 
+        
+    </h:panelGrid>
+ 
+    <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()" />
+ 
+    <p:dialog header="Values" widgetVar="dlg" showEffect="fold" hideEffect="fold">
+        <h:panelGrid id="display" columns="2" cellpadding="5">
+            <h:outputText value="Value 1: " />
+            <h:outputText value="#{spinnerView.number1}" />
+ 
+            <h:outputText value="Value 2: " />
+            <h:outputText value="#{spinnerView.number2}" />
+ 
+            <h:outputText value="Value 3: " />
+            <h:outputText value="#{spinnerView.number3}" />
+ 
+            <h:outputText value="Value 4: " />
+            <h:outputText value="#{spinnerView.number4}" />
+ 
+            <h:outputText value="Value 5: " />
+            <h:outputText value="#{spinnerView.number5}" />
+        </h:panelGrid>
+    </p:dialog>
+</h:form>
+
+
+
 	</h:body>
 </html>
