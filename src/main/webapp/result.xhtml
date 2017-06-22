@@ -42,16 +42,9 @@
 </p:dataTable>
 
 <p></p>
-
-
 	<p:button outcome="index" value="Back" >
 	</p:button>
-	
-
 <p></p>
-
-
-
 <p></p>
 <p></p>
 
@@ -62,7 +55,8 @@
 <h:form>
     <h:panelGrid columns="2" cellpadding="5" styleClass="ui-grid">
         <h:outputLabel for="basic" value="Nome: " />
-        <p:spinner id="basic" value="#{spinnerView.number1}" />
+        <p:inputText id="basic" value="#{spinnerView.name}" />
+
  
         <h:outputLabel for="step" value="Val: " />
         <p:spinner id="step" value="#{spinnerView.number2}" stepFactor="0.25" />
@@ -80,19 +74,19 @@
  
     <p:dialog header="Values" widgetVar="dlg" showEffect="fold" hideEffect="fold">
         <h:panelGrid id="display" columns="2" cellpadding="5">
-            <h:outputText value="Value 1: " />
-            <h:outputText value="#{spinnerView.number1}" />
+            <h:outputText value="Nome: " />
+            <h:outputText value="#{spinnerView.name}" />
  
-            <h:outputText value="Value 2: " />
+            <h:outputText value="Val: " />
             <h:outputText value="#{spinnerView.number2}" />
  
-            <h:outputText value="Value 3: " />
+            <h:outputText value="IVA: " />
             <h:outputText value="#{spinnerView.number3}" />
  
-            <h:outputText value="Value 4: " />
+            <h:outputText value="PVP: " />
             <h:outputText value="#{spinnerView.number4}" />
  
-            <h:outputText value="Value 5: " />
+            <h:outputText value="Prateleira: " />
             <h:outputText value="#{spinnerView.number5}" />
         </h:panelGrid>
     </p:dialog>

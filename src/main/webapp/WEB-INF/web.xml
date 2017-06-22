@@ -6,7 +6,7 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 	
 	<context-param>
 	<param-name>primefaces.THEME</param-name>
-	<param-value>black-tie</param-value>
+	<param-value>excite-bike</param-value>
 </context-param>
 	
 	

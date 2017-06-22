@@ -6,21 +6,23 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class SpinnerView {
     
-   private int number1;   
+   private String name;   
    private double number2;  
    private int number3;   
    private int number4; 
    private int number5;
 
-   public int getNumber1() {
-       return number1;
-   }
 
-   public void setNumber1(int number1) {
-       this.number1 = number1;
-   }
 
-   public double getNumber2() {
+   public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public double getNumber2() {
        return number2;
    }
 
