@@ -33,7 +33,7 @@ public class StockService {
         brands[5] = "Nintendo 3DS";
         brands[6] = "PS3";
         brands[7] = "Wii";
-        brands[8] = "Sega";
+        brands[8] = "GameCube";
         brands[9] = "Gameboy";
     }
      
