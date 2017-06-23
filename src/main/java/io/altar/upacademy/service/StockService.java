@@ -14,15 +14,15 @@ import io.altar.upacademy.Stock;
 @ApplicationScoped
 public class StockService {
      
-    private final static String[] colors;
+    private final static String[] IVA;
      
     private final static String[] brands;
      
     static {
-        colors = new String[3];
-        colors[0] = "6";
-        colors[1] = "13";
-        colors[2] = "23";
+        IVA = new String[3];
+        IVA[0] = "6";
+        IVA[1] = "13";
+        IVA[2] = "23";
      
         brands = new String[10];
         brands[0] = "PS4";
@@ -33,14 +33,14 @@ public class StockService {
         brands[5] = "Nintendo 3DS";
         brands[6] = "PS3";
         brands[7] = "Wii";
-        brands[8] = "Sega";
+        brands[8] = "GameCube";
         brands[9] = "Gameboy";
     }
      
     public List<Stock> createStocks(int size) {
         List<Stock> list = new ArrayList<Stock>();
         for(int i = 0 ; i < size ; i++) {
-            list.add(new Stock(getRandomId(), getRandomBrand(), getRandomYear(), getRandomColor(), getRandomPrice(), getRandomSoldState()));
+            list.add(new Stock(getRandomId(), getRandomBrand(), getRandomYear(), getRandomIVA(), getRandomPrice(), getRandomSoldState()));
         }
          
         return list;
@@ -54,8 +54,8 @@ public class StockService {
         return (int) (Math.random() * 3 + 10);
     }
      
-    private String getRandomColor() {
-        return colors[(int) (Math.random() * 3)];
+    private String getRandomIVA() {
+        return IVA[(int) (Math.random() * 3)];
     }
      
     private String getRandomBrand() {
@@ -70,8 +70,8 @@ public class StockService {
         return (Math.random() > 0.5) ? true: false;
     }
  
-    public List<String> getColors() {
-        return Arrays.asList(colors);
+    public List<String> getIVA() {
+        return Arrays.asList(IVA);
     }
      
     public List<String> getBrands() {

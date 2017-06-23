@@ -12,7 +12,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 		 <title>Stock Management</title>
 		 <h:outputStylesheet name="css/style.css"/>
-		
+		 
+		 
+		<!--   <link href=”resources/bootstrap/css/bootstrap.min.css” rel=”stylesheet” type=”text/css” />
+		<script type=”text/javascript” src=”resources/bootstrap/js/bootstrap.min.js”></script>
+		-->
 	</h:head>
 	<h:body>
 
@@ -22,28 +26,8 @@
 		</ui:insert>
 	    </div>
 
-<h:form>	
-	<p:toolbar style="margin:20px 0px">
-        <f:facet name="right">
-            <p:commandButton type="button" value="New"  />
-            <p:commandButton type="button" value="Open" />
-         
-        </f:facet>
- 
-        <f:facet name="left">
-            <p:menuButton value="Navigate" style="margin-right:20px">
-                <p:menuitem value="Home" outcome="index"/>
-                <p:menuitem value="Produtos" outcome="result"/>
-                <p:menuitem value="Prateleiras" outcome="result" />
-            </p:menuButton>
-            
-          <p:button outcome="result" value="Produtos" icon="ui-icon-star" style="margin-right:10px" >
-	</p:button>
-	<p:button outcome="result" value="Prateleiras?" icon="ui-icon-star">
-	</p:button> 
-        </f:facet>
-    </p:toolbar>
-</h:form>	
+
+
 	<p></p>	
 	
 	<div id="footer">

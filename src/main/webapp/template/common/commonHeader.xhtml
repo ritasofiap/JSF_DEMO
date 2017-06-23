@@ -10,8 +10,31 @@
 	</h:head>
 	<h:body>
 
+	<h:form>	
+	<p:toolbar style="margin:20px 0px">
+        <f:facet name="right">
+            <p:commandButton type="button" value="New"  />
+            <p:commandButton type="button" value="Open" />
+         
+        </f:facet>
+ 
+        <f:facet name="left">
+            <p:menuButton value="Navigate" style="margin-right:20px">
+                <p:menuitem value="Home" outcome="index"/>
+                <p:menuitem value="Produtos" outcome="result"/>
+                <p:menuitem value="Prateleiras" outcome="result" />
+            </p:menuButton>
+            
+          <p:button outcome="result" value="Produtos" icon="ui-icon-star" style="margin-right:10px" >
+	</p:button>
+	<p:button outcome="result" value="Prateleiras?" icon="ui-icon-star">
+	</p:button> 
+        </f:facet>
+    </p:toolbar>
+</h:form>	
+
 	<header>
-		<h1>Stock Management</h1> 
+		<h1>Gestão de Stocks</h1> 
 	</header>
 
 

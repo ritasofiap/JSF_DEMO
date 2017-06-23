@@ -3,6 +3,7 @@
 h1 {
 	font-family: arial;
 	color: #2190d9;
+	margin-top: 20px;
 }
 
 h2 {
@@ -10,10 +11,14 @@ h2 {
 	color: #2190d9;
 }
 
+header {
+		margin-top:0px;
+		font-family: arial;
+}
+
 footer {
 		margin-top:20px;
 		font-family: arial;
-	
 }
 
 /* {

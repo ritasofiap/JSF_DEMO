@@ -11,15 +11,15 @@ public class Stock {
 	private String randomId;
 	private String randomBrand; //Nome
 	private int randomYear; //Val
-	private String randomColor; //IVA mudar pa int
+	private String randomIVA; //IVA mudar pa int
 	private int randomPrice; //PVP
 	private boolean randomSoldState; //nada
 	
-	public Stock(String randomId, String randomBrand, int randomYear, String randomColor, int randomPrice, boolean randomSoldState) {
+	public Stock(String randomId, String randomBrand, int randomYear, String randomIVA, int randomPrice, boolean randomSoldState) {
 		this.randomId = randomId;
 		this.randomBrand = randomBrand;
 		this.randomYear = randomYear;
-		this.randomColor = randomColor;
+		this.randomIVA = randomIVA;
 		this.randomPrice = randomPrice;
 		this.randomSoldState = randomSoldState;
 	}
@@ -48,12 +48,12 @@ public class Stock {
 		this.randomYear = randomYear;
 	}
 
-	public String getRandomColor() {
-		return randomColor;
+	public String getRandomIVA() {
+		return randomIVA;
 	}
 
-	public void setRandomColor(String randomColor) {
-		this.randomColor = randomColor;
+	public void setRandomIVA(String randomIVA) {
+		this.randomIVA = randomIVA;
 	}
 
 	public int getRandomPrice() {
