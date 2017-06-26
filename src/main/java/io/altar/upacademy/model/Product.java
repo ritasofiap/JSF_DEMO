@@ -1,9 +1,9 @@
-package io.altar.model;
+package io.altar.upacademy.model;
 
 import java.util.ArrayList;
 
-import io.altar.model.Entity;
-import io.altar.model.Product;
+import io.altar.upacademy.model.Entity;
+import io.altar.upacademy.model.Product;
 
 public class Product extends Entity{
 

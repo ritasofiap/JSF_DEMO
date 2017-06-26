@@ -1,12 +1,12 @@
-package io.altar.repositories;
+package io.altar.upacademy.repositories;
 
 
 import java.util.LinkedHashMap;
 import java.util.Set;
 
-import io.altar.model.Entity;
-import io.altar.model.Product;
-import io.altar.model.Shelf;
+import io.altar.upacademy.model.Entity;
+import io.altar.upacademy.model.Product;
+import io.altar.upacademy.model.Shelf;
 
 import java.util.Collection;
 
@@ -84,12 +84,12 @@ public abstract class EntityRepository<E extends Entity> {
 	}
 	
 		
-	public static void editEntity(Integer entityId, Integer shelfLocal, Integer shelfCapacity, Double shelfDailyCost) {
+	/*public static void editEntity(Integer entityId, Integer shelfLocal, Integer shelfCapacity, Double shelfDailyCost) {
 		
 		((Shelf)ShelfRepository.getInstance().findByEntityId(entityId)).setShelfLocal(shelfLocal);
 		((Shelf)ShelfRepository.getInstance().findByEntityId(entityId)).setShelfCapacity(shelfCapacity);
 		((Shelf)ShelfRepository.getInstance().findByEntityId(entityId)).setShelfDailyCost(shelfDailyCost);
-	}
+	}*/
 
 }
 

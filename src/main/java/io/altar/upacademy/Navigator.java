@@ -35,6 +35,5 @@ public class Navigator {
 
 
 
-	//Getters and Setters for “name” and “disabled” …>
 }
 
