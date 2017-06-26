@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.UUID;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
+
 import io.altar.upacademy.view.ProductBean;
  
-@ManagedBean(name = "productService")
+@Named("productService")
 @ApplicationScoped
 
 public class ProductService {
@@ -17,6 +19,12 @@ public class ProductService {
      
     private final static String[] name;
      
+    
+    public ProductService() {
+       }
+    
+    
+    
     static {
         IVA = new Double[3];
         IVA[0] = 6.0;
@@ -33,14 +41,14 @@ public class ProductService {
         name[6] = "PS3";
     }
      
-    public List<ProductBean> createStocks(int size) {
+   /* public List<ProductBean> createStocks(int size) {
         List<ProductBean> list = new ArrayList<ProductBean>();
         for(int i = 0 ; i < size ; i++) {
-            list.add(new ProductBean(getRandomId(), getRandomName(), getRandomVal(), getRandomIVA(), getRandomPVP()));
+            list.add(new ProductBean(getRandomId(), getProductName(), getProducVal(), getProducIVA(), getProducPVP()));
         }
          
         return list;
-    }
+    }*/
      
     private String getRandomId() {
         return UUID.randomUUID().toString().substring(0, 8);

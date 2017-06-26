@@ -1,7 +1,13 @@
 package io.altar.upacademy.view;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 import javax.inject.Named;
+
+import io.altar.upacademy.model.Product;
+import io.altar.upacademy.service.ProductService;
+
 import javax.faces.bean.RequestScoped;
 
 @Named("ProductBean")
@@ -10,22 +16,43 @@ import javax.faces.bean.RequestScoped;
 public class ProductBean {
 
 	private String randomId;
-	private String randomName;
-	private double randomVal;
-	private double randomIVA;
-	private double randomPVP;
-	private ArrayList<ProductBean> productShelves = new ArrayList<>();
+	private String productName;
+	private double productVal;
+	private double productIVA;
+	private double productPVP;
+    private int shelfID;
+    
+    private Product product = new Product();
 
-	public ProductBean(String randomId, String randomName, double randomVal, Double randomIVA, double randomPVP) {
-		
-	}
+    
+    
+    public ProductBean() {
+    }
+    
+    @Inject
+    private ProductService productService;
 	
-	
-	
-	
-	
-	
-	public String getRandomId() {
+    
+    
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public ProductService getProductService() {
+        return productService;
+    }
+
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+
+    
+    
+    public String getRandomId() {
 		return randomId;
 	}
 
@@ -33,52 +60,51 @@ public class ProductBean {
 		this.randomId = randomId;
 	}
 
-	public String getRandomName() {
-		return randomName;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setRandomName(String randomName) {
-		this.randomName = randomName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public double getRandomVal() {
-		return randomVal;
+	public double getProductVal() {
+		return productVal;
 	}
 
-	public void setRandomVal(double randomVal) {
-		this.randomVal = randomVal;
+	public void setVal(double productVal) {
+		this.productVal = productVal;
 	}
 
-	public double getRandomIVA() {
-		return randomIVA;
+	public double getProductIVA() {
+		return productIVA;
 	}
 
-	public void setRandomIVA(double randomIVA) {
-		this.randomIVA = randomIVA;
-	}
-	
-	public double getRandomPVP() {
-		return randomPVP;
+	public void setProductIVA(double productIVA) {
+		this.productIVA = productIVA;
 	}
 
-	public void setRandomPVP(double randomPVP) {
-		this.randomPVP = randomPVP;
-	}
-	
-	
-	
-	
-	
-
-	public ArrayList<ProductBean> getProductShelves() {   //static???
-		return productShelves;
+	public double getProductPVP() {
+		return productPVP;
 	}
 
-	public void setProductShelf(ArrayList<ProductBean> productShelves) {
-		this.productShelves = productShelves;
+	public void setProductPVP(double productPVP) {
+		this.productPVP = productPVP;
 	}
-	
-	
+
+	public int getShelfID() {
+		return shelfID;
+	}
+
+	public void setShelfID(int shelfID) {
+		this.shelfID = shelfID;
+	}
+
+    
+    
+    
+    
+    
 	
 }
 

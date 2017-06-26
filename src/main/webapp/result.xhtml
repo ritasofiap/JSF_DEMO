@@ -7,6 +7,8 @@
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 		<h:outputStylesheet name="css/style.css"/>
+		<h:outputStylesheet name="bootstrap/css/bootstrap.css"/>
+   		 <h:outputScript name="bootstrap/js/bootstrap.js"/>
 		
 		<!--  <link href=”resources/bootstrap/css/bootstrap.min.css” rel=”stylesheet” type=”text/css” />
 		<script type=”text/javascript” src=”resources/bootstrap/js/bootstrap.min.js”></script>
@@ -24,7 +26,7 @@
 		<div class="container-fluid">
 		
 		<div class="row">
-		<div class="col-lg-6 col-lg-6">
+		<div class="col-md-8 col-md-offset-2">
 		
 <p:dataTable var="stock" value="#{dtBasicView.stocks}">
 
@@ -56,7 +58,14 @@
 <p></p>
 <p></p>
 
-<h2>Adicionar produto/prateleira...?</h2>
+</div>
+</div>
+
+	
+		<div class="row">
+		<div class="product col-md-8 col-md-offset-2">
+
+<h3>Adicionar produto</h3>
 <p></p>
 
 
