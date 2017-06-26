@@ -1,4 +1,4 @@
-package io.altar.model;
+package io.altar.upacademy.model;
 
 public class Entity {
 	

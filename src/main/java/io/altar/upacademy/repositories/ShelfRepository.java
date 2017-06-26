@@ -1,6 +1,6 @@
-package io.altar.repositories;
+package io.altar.upacademy.repositories;
 
-import io.altar.model.Shelf;
+import io.altar.upacademy.model.Shelf;
 
 public class ShelfRepository extends EntityRepository<Shelf>{
 

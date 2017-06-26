@@ -2,10 +2,11 @@ package io.altar.upacademy;
 
 import javax.inject.Named;
 //import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.RequestScoped;
 
 
 @Named("Stock")
-//@RequestScoped
+@RequestScoped
 public class Stock {
 
 	private String randomId;

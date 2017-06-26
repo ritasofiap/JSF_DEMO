@@ -1,6 +1,6 @@
-package io.altar.repositories;
+package io.altar.upacademy.repositories;
 
-import io.altar.model.Product;
+import io.altar.upacademy.model.Product;
 
 public class ProductRepository extends EntityRepository<Product> {
 	
