@@ -1,9 +1,7 @@
 package io.altar.upacademy.service;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
 import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.upacademy.repositories.ProductRepository;
@@ -12,17 +10,47 @@ import io.altar.upacademy.model.Product;
 @Named("productService")
 @RequestScoped
 
-public class ProductService {
+public class ProductService extends EntityService<Product>{
 	
-    private final static Double[] IVA;
+	
+	public ProductService() {
+       }
+	
+	@Inject
+	//private ProductRepository productList;
+	private ProductRepository productList = ProductRepository.getInstance();
+	
+    public ProductRepository getProductList() {
+		return productList;
+	}
+
+	public void setProductList(ProductRepository productList) {
+		this.productList = productList;
+	}
+
+	
+	
+	public void addToRep(Product product) {
+		productList.addEntityId(product);
+	}
+	
+	/*public void editProduct(Product product) {
+		productList.editEntity();
+	}*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*
+	private final static Double[] IVA;
      
     private final static String[] name;
-     
-    
-    public ProductService() {
-       }
-    
-    
+
     
     static {
         IVA = new Double[3];
@@ -49,7 +77,7 @@ public class ProductService {
         return list;
     }*/
      
-    private String getRandomId() {
+  /* private String getRandomId() {
         return UUID.randomUUID().toString().substring(0, 8);
     }
     
@@ -77,18 +105,9 @@ public class ProductService {
      
     public List<String> getName() {
         return Arrays.asList(name);
-    }
+    }*/
 
     
-	private static ProductRepository productList = ProductRepository.getInstance();
+	//private static ProductRepository productList = ProductRepository.getInstance();
 
-    
-	public void addToRep(Product product) {
-		productList.addEntityId(product);
-		
-	}
-	
-	
-	
-	
 }

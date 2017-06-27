@@ -28,30 +28,30 @@
 		<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 		
-<p:dataTable var="stock" value="#{dtBasicView.stocks}">
+	<!--  LISTA PRODUTOS -->
+		
+<p:dataTable id="Product" var="products" value="#{ProductBean.products}" 
+			rowKey="#{Product.entityId}">
 
      <p:column headerText="ID">
-        <h:outputText value="#{productBean.getrandomId()}" />
+        <h:outputText value="#{Product.entityId}" />
     </p:column>
  
     <p:column headerText="Nome">
-        <h:outputText value="#{productBean.getProductName()}" />
+        <h:outputText value="#{Product.name}" />
     </p:column>
     
     <p:column headerText="Val">
-        <h:outputText value="#{productBean.getProductVal()}" />
+        <h:outputText value="#{Product.val}" />
     </p:column>
   
     <p:column headerText="IVA %">
-        <h:outputText value="#{productBean.getProductIVA()}" />
+        <h:outputText value="#{Product.IVA}" />
     </p:column>
     
      <p:column headerText="PVP $">
-        <h:outputText value="#{productBean.getProductPVP()}" />
+        <h:outputText value="#{Product.PVP}" />
     </p:column>  
-    
-    
-    
     
 </p:dataTable>
 
@@ -75,26 +75,29 @@
 
 <h:form>
     <h:panelGrid columns="2" cellpadding="5" styleClass="ui-grid">
+       
         <h:outputLabel for="basic" value="Nome: " />
-        <p:inputText id="basic" value="#{product.productName}" />
+        <p:inputText id="basic" value="#{ProductBean.newProduct.name}" />
 
  
         <h:outputLabel for="step" value="Val: " />
-        <p:spinner id="step" value="#{product.productVal}" stepFactor="0.25" />
+        <p:spinner id="step" value="#{ProductBean.newProduct.val}" stepFactor="0.25" />
  
         <h:outputLabel for="minMax" value="IVA: " />
-        <p:spinner id="minMax" value="#{product.productIVA}" min="0" max="100" />
+        <p:spinner id="minMax" value="#{ProductBean.newProduct.IVA}" min="0" max="100" />
  
         <h:outputLabel for="prefix" value="PVP: " />
-        <p:spinner id="prefix" value="#{product.productPVP}" prefix="$" min="0" />
+        <p:spinner id="prefix" value="#{ProductBean.newProduct.PVP}" prefix="$" min="0" />
  
         
     </h:panelGrid>
  
-    <p:commandButton value="Submit" 
-    					action="productService.addToRep(product)"
-   						update="display" oncomplete="PF('dlg').show()"/>
+    <p:commandButton value="Submit" id="AddSubmit"
+    					action="ProductBean.addNewProduct(newProduct)"
+    					/>
  
+    <!--  update="display" oncomplete="PF('dlg').show()"
+    
     <p:dialog header="Values" widgetVar="dlg" showEffect="fold" hideEffect="fold">
         <h:panelGrid id="display" columns="2" cellpadding="5">
             <h:outputText value="Nome: " />
@@ -110,7 +113,7 @@
             <h:outputText value="#{product.productPVP}" />
  
             </h:panelGrid>
-    </p:dialog>
+    </p:dialog> -->
 </h:form>
 
 </div>

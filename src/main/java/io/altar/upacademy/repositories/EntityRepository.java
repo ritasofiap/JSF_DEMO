@@ -6,82 +6,95 @@ import java.util.Set;
 
 import io.altar.upacademy.model.Entity;
 import io.altar.upacademy.model.Product;
-import io.altar.upacademy.model.Shelf;
 
 import java.util.Collection;
 
 
-public abstract class EntityRepository<E extends Entity> {
+public class EntityRepository<E extends Entity> {
 	
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>();  //long ou integer
+	
 
 	public void setEntities(LinkedHashMap<Integer, E> entities) {
 		this.entities = entities;
 	}
 
-	private int index = 0; //tava static
-	
-	public int getNextEntityId(){  //long ou int  //tava static
-		return ++index;
-	}
-	
-	//read
-	public E findByEntityId(Integer entityId){
-		return entities.get(entityId);
-	}
-	
-	//show
-	public void displayEntity(Integer key){
-		System.out.println(entities.get(key).toString());
-	}
-		
 	public Collection<E> getEntities(){
 		return entities.values();
 	}
 	
-	//add
-	public void addEntityId(E entity){
-		int newEntityId = getNextEntityId();
-		entity.setEntityId(newEntityId);
-		entities.put(entity.getEntityId(), entity);		
+	private int entityId = 0; //tava static
+	
+	public int getNextEntityId(){  //long ou int  //tava static
+		return ++entityId;
 	}
 	
+	
+	
+	//add
+	public void addEntityId(E entity){
+			int newEntityId = getNextEntityId();
+			entity.setEntityId(newEntityId);
+			entities.put(entity.getEntityId(), entity);		
+		}
+		
 	public int getEntityIndex(E entity){
-		return index;  
-	}
+			return entityId;  
+		}
+	
+	
+		
 	
 	//remove
 	public void removeEntity(Integer entityId){
 		entities.remove(entityId);
 	}
 		
-	//check if empty
-	public boolean isEmpty(){
-		return entities.isEmpty();
-	}
-	
-	//entity key
-	public Set<Integer> keySet(){
-		return entities.keySet();
-	}
-			
-	//hashmap contains entity
-	public boolean containsKey(Integer key){
-		return entities.containsKey(key);
-	}
-	
-	//edit
-	public void editEntity(E entity){
-		entities.put(index, entity);  //getId()
-	}
-	
-	/*public static void editEntity(Integer entityId, String productName, Integer productVal, Double productIVA, Double productPVP) {
 		
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setProductName(productName);
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setProductVal(productVal);
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setProductIVA(productIVA);
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setProductPVP(productPVP);
+	//edit
+	public void editEntity(){
+		//entities.put(index, entity);  //getId() //vazio	
+	}
+	
+	
+	
+	
+	
+	//read
+		public E findByEntityId(Integer entityId){
+			return entities.get(entityId);
+		}
+	
+	//show
+	/*public void displayEntity(Integer key){
+		System.out.println(entities.get(key).toString());
 	}*/
+		
+	
+	
+	//check if empty
+		public boolean isEmpty(){
+			return entities.isEmpty();
+		}
+		
+		//entity key
+		public Set<Integer> keySet(){
+			return entities.keySet();
+		}
+				
+		//hashmap contains entity
+		public boolean containsKey(Integer key){
+			return entities.containsKey(key);
+		}
+	
+	
+	public void editEntity(Integer entityId, String name, Integer val, Double IVA, Double PVP) {
+		
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setName(name);
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setVal(val);
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setIVA(IVA);
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setPVP(PVP);
+	}
 	
 		
 	/*public static void editEntity(Integer entityId, Integer shelfLocal, Integer shelfCapacity, Double shelfDailyCost) {

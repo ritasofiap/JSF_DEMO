@@ -1,5 +1,7 @@
 package io.altar.upacademy.model;
 
+import java.util.ArrayList;
+
 //import java.util.ArrayList;
 
 import io.altar.upacademy.model.Entity;
@@ -8,22 +10,24 @@ import io.altar.upacademy.model.Product;
 
 public class Product extends Entity{
 
+	//private Integer entityId;
 	private double val;
 	private double IVA;
 	private double PVP;
 	private String name;
+	private ArrayList<Product> productShelves;
 	
 	
-	public Product(){
-		
+	public Product(){ //constr vazio
 	}
 	
-	public Product (String name, double val, double IVA, double PVP){
+/*	public Product (String name, double val, double IVA, double PVP){
+		
 		this.name = name;
 		this.val = val;
 		this.IVA = IVA;
 		this.PVP = PVP;
-	}
+	}*/
 
 		
 	public double getVal() {
@@ -60,7 +64,7 @@ public class Product extends Entity{
 
 	
 	
-/*	public ArrayList<Product> getProductShelves() {   //static???
+	public ArrayList<Product> getProductShelves() {   //static???
 		return productShelves;
 	}
 
@@ -68,11 +72,11 @@ public class Product extends Entity{
 	public void setProductShelf(ArrayList<Product> productShelves) {
 		this.productShelves = productShelves;
 	}
-	*/
+	
 
 
-	/*@Override
+	@Override
 	public String toString(){
-		return "Product ID: "+ getEntityId() + " | Name: " + getProductName() + " | Val: " + productVal + " | IVA: " + productIVA  + " | PVP: " + productPVP + " | Shelves: " + productShelves;
-	}*/
+		return "Product ID: "+ getEntityId() + " | Name: " + getName() + " | Val: " + getVal() + " | IVA: " + getIVA()  + " | PVP: " + getPVP() + " | Shelves: " + productShelves;
+	}
 }

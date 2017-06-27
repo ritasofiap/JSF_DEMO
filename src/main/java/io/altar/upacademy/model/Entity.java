@@ -9,7 +9,12 @@ public class Entity {
 		return entityId;
 	}
 	
-	public void setEntityId(int entityId){
+	public void setEntityId(Integer entityId){
 		this.entityId = entityId;
 	}
+	
+	
+	public Entity(){	
+	}
+	
 }

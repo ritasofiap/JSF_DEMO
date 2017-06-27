@@ -1,7 +1,6 @@
 package io.altar.upacademy.view;
 
-import java.util.ArrayList;
-
+import java.io.Serializable;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -13,37 +12,35 @@ import javax.faces.bean.RequestScoped;
 @Named("ProductBean")
 @RequestScoped
 
-public class ProductBean {
+public class ProductBean implements Serializable {
 
-	private String randomId;
-	private String productName;
-	private double productVal;
-	private double productIVA;
-	private double productPVP;
-    private int shelfID;
-    
-    private Product product = new Product();
+	  
+    private static final long serialVersionUID = 1L;
+    		
+    private Product newProduct = new Product();
  
+    public ProductBean() {	
+    }
     
-    public ProductBean() {
-    	
+    public Product getNewProduct() {
+        return newProduct;
+    }
+
+    public void setNewProduct(Product newProduct) {
+        this.newProduct = newProduct;
     }
     
     @Inject
     private ProductService productService;
 	
-    public void addProduct() {
-    	productService.addToRep(product);
+    public void addNewProduct() {
+    	productService.addToRep(newProduct);
     }
     
+ /*  public void  editProduct(){
+	   productService.editProduct(newProduct);
+   }*/
     
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 
     public ProductService getProductService() {
         return productService;
@@ -53,58 +50,6 @@ public class ProductBean {
         this.productService = productService;
     }
 
-    
-    
-    public String getRandomId() {
-		return randomId;
-	}
-
-	public void setRandomId(String randomId) {
-		this.randomId = randomId;
-	}
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public double getProductVal() {
-		return productVal;
-	}
-
-	public void setVal(double productVal) {
-		this.productVal = productVal;
-	}
-
-	public double getProductIVA() {
-		return productIVA;
-	}
-
-	public void setProductIVA(double productIVA) {
-		this.productIVA = productIVA;
-	}
-
-	public double getProductPVP() {
-		return productPVP;
-	}
-
-	public void setProductPVP(double productPVP) {
-		this.productPVP = productPVP;
-	}
-
-	public int getShelfID() {
-		return shelfID;
-	}
-
-	public void setShelfID(int shelfID) {
-		this.shelfID = shelfID;
-	}
-
-    
-    
     
     
     
