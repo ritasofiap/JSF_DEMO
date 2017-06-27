@@ -29,7 +29,6 @@ public class ProductBean {
     	
     }
     
-    
     @Inject
     private ProductService productService;
 	
