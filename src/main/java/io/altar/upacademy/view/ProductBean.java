@@ -23,15 +23,19 @@ public class ProductBean {
     private int shelfID;
     
     private Product product = new Product();
-
-    
+ 
     
     public ProductBean() {
+    	
     }
+    
     
     @Inject
     private ProductService productService;
 	
+    public void addProduct() {
+    	productService.addToRep(product);
+    }
     
     
     public Product getProduct() {
