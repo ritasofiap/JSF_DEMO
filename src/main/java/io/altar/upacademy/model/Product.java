@@ -11,10 +11,11 @@ import io.altar.upacademy.model.Product;
 public class Product extends Entity{
 
 	//private Integer entityId;
+	private String name;
 	private double val;
 	private double IVA;
 	private double PVP;
-	private String name;
+	
 	//private ArrayList<Product> productShelves;
 	
 	

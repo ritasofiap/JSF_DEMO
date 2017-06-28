@@ -23,15 +23,18 @@
 		</ui:insert>
 	</div>		
 		
+		
 		<div class="container-fluid">
 		
 		<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 		
-	<!--  LISTA PRODUTOS -->
+<h:form>		
 		
-<h:form id="ProductTable">		
-<p:dataTable id="ProductList" var="Product" value="#{ProductBean.getProducts()}" 
+		<p:dataTable 
+			id="ProductList" 
+			var="Product" 
+			value="#{productBean.getProducts()}" 
 			rowKey="#{Product.entityId}"
 			emptyMessage="No products found">
 
@@ -78,55 +81,39 @@
 
 
 <h:form>
-   
-       
-        <h:outputLabel value="Nome: " />
+         <h:panelGrid columns="2">
+        <h:outputText value="Nome: " />
         <br/>
-        <p:inputText value="#{ProductBean.newProduct.name}" />
+        <p:inputText value="#{productBean.newProduct.name}" required="true"/>
 <br/>
-        <h:outputLabel value="Val: " />
+        <h:outputText value="Val: " />
         <br/>
-        <p:inputText value="#{ProductBean.newProduct.val}" required="true"/>
+        <p:inputText value="#{productBean.newProduct.val}" required="true"/>
  <br/>
-        <h:outputLabel value="IVA: " />
+        <h:outputText value="IVA: " />
         <br/>
-        <p:inputText value="#{ProductBean.newProduct.IVA}" required="true"/>
+        <p:inputText value="#{productBean.newProduct.IVA}" required="true"/>
  <br/>
-        <h:outputLabel value="PVP: " />
+        <h:outputText value="PVP: " />
         <br/>
-        <p:inputText value="#{ProductBean.newProduct.PVP}" required="true"/>
+        <p:inputText value="#{productBean.newProduct.PVP}" required="true"/>
   <br/>
+  </h:panelGrid>
  <br/>       
   
  
-    <p:commandButton value="Submit Product" 
-    					action="#{ProductBean.addNewProduct()}"
+    <h:commandButton value="Submit Product" 
+    					action="#{productBean.addNewProduct()}"
     					update="ProductTable"
     					/>
  
-    <!--  update="display" oncomplete="PF('dlg').show()"
-    
-    <p:dialog header="Values" widgetVar="dlg" showEffect="fold" hideEffect="fold">
-        <h:panelGrid id="display" columns="2" cellpadding="5">
-            <h:outputText value="Nome: " />
-            <h:outputText value="#{product.productName}" />
- 
-            <h:outputText value="Val: " />
-            <h:outputText value="#{product.productVal}" />
- 
-            <h:outputText value="IVA: " />
-            <h:outputText value="#{product.productIVA}" />
- 
-            <h:outputText value="PVP: " />
-            <h:outputText value="#{product.productPVP}" />
- 
-            </h:panelGrid>
-    </p:dialog> -->
 </h:form>
 
 </div>
 </div>
 </div>
+		
+	
 
 <div id="footer">
 		<ui:insert name="footer" >
