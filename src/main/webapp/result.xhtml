@@ -30,7 +30,8 @@
 		
 	<!--  LISTA PRODUTOS -->
 		
-<p:dataTable id="Product" var="Product" value="#{ProductBean.products}" 
+<h:form id="ProductTable">		
+<p:dataTable id="ProductList" var="Product" value="#{ProductBean.getProducts()}" 
 			rowKey="#{Product.entityId}"
 			emptyMessage="No products found">
 
@@ -60,6 +61,8 @@
 	<p:button outcome="index" value="Back" >
 	</p:button>
 <p></p>
+</h:form>
+
 <p></p>
 <p></p>
 
@@ -75,26 +78,30 @@
 
 
 <h:form>
-    <h:panelGrid columns="2" cellpadding="5" styleClass="ui-grid">
+   
        
-        <h:outputLabel for="basic" value="Nome: " />
-        <p:inputText id="basic" value="#{ProductBean.newProduct.name}" />
-
+        <h:outputLabel value="Nome: " />
+        <br/>
+        <p:inputText value="#{ProductBean.newProduct.name}" />
+<br/>
+        <h:outputLabel value="Val: " />
+        <br/>
+        <p:inputText value="#{ProductBean.newProduct.val}" required="true"/>
+ <br/>
+        <h:outputLabel value="IVA: " />
+        <br/>
+        <p:inputText value="#{ProductBean.newProduct.IVA}" required="true"/>
+ <br/>
+        <h:outputLabel value="PVP: " />
+        <br/>
+        <p:inputText value="#{ProductBean.newProduct.PVP}" required="true"/>
+  <br/>
+ <br/>       
+  
  
-        <h:outputLabel for="step" value="Val: " />
-        <p:spinner id="step" value="#{ProductBean.newProduct.val}" stepFactor="0.25" />
- 
-        <h:outputLabel for="minMax" value="IVA: " />
-        <p:spinner id="minMax" value="#{ProductBean.newProduct.IVA}" min="0" max="100" />
- 
-        <h:outputLabel for="prefix" value="PVP: " />
-        <p:spinner id="prefix" value="#{ProductBean.newProduct.PVP}" prefix="$" min="0" />
- 
-        
-    </h:panelGrid>
- 
-    <p:commandButton value="Submit" id="AddSubmit"
-    					action="ProductBean.addNewProduct(newProduct)"
+    <p:commandButton value="Submit Product" 
+    					action="#{ProductBean.addNewProduct()}"
+    					update="ProductTable"
     					/>
  
     <!--  update="display" oncomplete="PF('dlg').show()"

@@ -1,7 +1,6 @@
 package io.altar.upacademy.service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
@@ -13,13 +12,11 @@ import io.altar.upacademy.model.Product;
 @Named("productService")
 @RequestScoped
 
-public class ProductService extends EntityService<Product>{
+public class ProductService {
 	
 	
-	public ProductService() {
-       }
 	
-	@Inject
+	//@Inject
 	//private ProductRepository productList;
 	private ProductRepository productList = ProductRepository.getInstance();
 	
@@ -33,21 +30,33 @@ public class ProductService extends EntityService<Product>{
 
 	
 	
+	public Collection<Product> getProducts(){
+		return productList.getEntities();
+	}
+
+	
+	public ProductService() {
+    }
+	
+	
 	public void addToRep(Product product) {
 		productList.addEntityId(product);
 	}
 	
-	/*public void editProduct(Product product) {
-		productList.editEntity();
-	}*/
-	public List<Product> createProducts(int size) {
+	public void editProduct(Product product) {
+		productList.editEntityProduct(product.getEntityId(), product.getName(), product.getVal(), product.getIVA(), product.getPVP());
+	}
+	
+	
+	
+	/*public List<Product> createProducts(int size) {
         List<Product> list = new ArrayList<Product>();
         for(int i = 0 ; i < size ; i++) {
             list.add(new Product());
         }
          
         return list;
-    }
+    }*/
 
 	
 	

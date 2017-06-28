@@ -18,13 +18,20 @@ public class ProductRepository extends EntityRepository<Product> {
 		return INSTANCE;
 	}
 	
-	
-	
-	
-    	private ProductRepository(){		
+    private ProductRepository(){		
 	}
 	
+	public void editEntityProduct (int entityId, String name, double val, double IVA, double PVP){
+		((Product) findByEntityId(entityId)).setName(name);
+		((Product) findByEntityId(entityId)).setVal(val);
+		((Product) findByEntityId(entityId)).setIVA(IVA);
+		((Product) findByEntityId(entityId)).setPVP(PVP);
 	
+	}    
+	
+	
+	
+    	
 	
 	//  private static ProductRepository instance;	
 	/*public static ProductRepository getInstance(){
@@ -34,11 +41,7 @@ public class ProductRepository extends EntityRepository<Product> {
 	        return instance;
 	}*/
 	
-    	
-	
-	
-	
-	
+    
 	public void addProduct(){
 		addEntityId(new Product());
 	}

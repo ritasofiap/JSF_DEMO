@@ -16,7 +16,7 @@ public class EntityRepository<E extends Entity> {
 	
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>();  //long ou integer
 	
-	 private List<E> listView = new ArrayList<>();
+	//private List<E> listView = new ArrayList<>();
 
 
 	public void setEntities(LinkedHashMap<Integer, E> entities) {
@@ -27,21 +27,21 @@ public class EntityRepository<E extends Entity> {
 		return entities.values();
 	}
 	
-	private int entityId = 0; //tava static
+	private int index = 0; //tava static
 	
 	public int getNextEntityId(){  //long ou int  //tava static
-		return ++entityId;
+		return ++index;
 	}
 	
 	
 	
-	public List<E> getListView() {
+	/*public List<E> getListView() {
 		return listView;
 	}
 
 	public void setListView(List<E> listView) {
 		this.listView = listView;
-	}
+	}*/
 	
 
 	//add
@@ -52,7 +52,7 @@ public class EntityRepository<E extends Entity> {
 		}
 		
 	public int getEntityIndex(E entity){
-			return entityId;  
+			return index;  
 		}
 	
 	//remove
@@ -92,13 +92,13 @@ public class EntityRepository<E extends Entity> {
 		}
 	
 	
-	public void editEntity(Integer entityId, String name, Integer val, Double IVA, Double PVP) {
+	/*public void editEntity(Integer entityId, String name, Double val, Double IVA, Double PVP) {
 		
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setName(name);
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setVal(val);
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setIVA(IVA);
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setPVP(PVP);
-	}
+	}*/
 
 
 
