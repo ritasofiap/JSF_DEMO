@@ -1,5 +1,6 @@
 package io.altar.upacademy.repositories;
 
+
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Named;
 
@@ -33,8 +34,7 @@ public class ProductRepository extends EntityRepository<Product> {
 	        return instance;
 	}*/
 	
-	
-	
+    	
 	
 	
 	

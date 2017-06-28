@@ -1,5 +1,8 @@
 package io.altar.upacademy.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,12 +40,19 @@ public class ProductService extends EntityService<Product>{
 	/*public void editProduct(Product product) {
 		productList.editEntity();
 	}*/
+	public List<Product> createProducts(int size) {
+        List<Product> list = new ArrayList<Product>();
+        for(int i = 0 ; i < size ; i++) {
+            list.add(new Product());
+        }
+         
+        return list;
+    }
+
 	
 	
-	
-	
-	
-	
+	 
+}	
 	
 	
 	
@@ -110,4 +120,3 @@ public class ProductService extends EntityService<Product>{
     
 	//private static ProductRepository productList = ProductRepository.getInstance();
 
-}

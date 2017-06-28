@@ -2,11 +2,13 @@ package io.altar.upacademy.repositories;
 
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Set;
 
 import io.altar.upacademy.model.Entity;
 import io.altar.upacademy.model.Product;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 
@@ -14,6 +16,8 @@ public class EntityRepository<E extends Entity> {
 	
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>();  //long ou integer
 	
+	 private List<E> listView = new ArrayList<>();
+
 
 	public void setEntities(LinkedHashMap<Integer, E> entities) {
 		this.entities = entities;
@@ -31,6 +35,15 @@ public class EntityRepository<E extends Entity> {
 	
 	
 	
+	public List<E> getListView() {
+		return listView;
+	}
+
+	public void setListView(List<E> listView) {
+		this.listView = listView;
+	}
+	
+
 	//add
 	public void addEntityId(E entity){
 			int newEntityId = getNextEntityId();
@@ -42,23 +55,15 @@ public class EntityRepository<E extends Entity> {
 			return entityId;  
 		}
 	
-	
-		
-	
 	//remove
 	public void removeEntity(Integer entityId){
 		entities.remove(entityId);
 	}
 		
-		
 	//edit
 	public void editEntity(){
 		//entities.put(index, entity);  //getId() //vazio	
 	}
-	
-	
-	
-	
 	
 	//read
 		public E findByEntityId(Integer entityId){
@@ -70,7 +75,6 @@ public class EntityRepository<E extends Entity> {
 		System.out.println(entities.get(key).toString());
 	}*/
 		
-	
 	
 	//check if empty
 		public boolean isEmpty(){
@@ -95,6 +99,9 @@ public class EntityRepository<E extends Entity> {
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setIVA(IVA);
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setPVP(PVP);
 	}
+
+
+
 	
 		
 	/*public static void editEntity(Integer entityId, Integer shelfLocal, Integer shelfCapacity, Double shelfDailyCost) {

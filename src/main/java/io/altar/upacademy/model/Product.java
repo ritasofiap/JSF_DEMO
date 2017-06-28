@@ -42,16 +42,16 @@ public class Product extends Entity{
 		return IVA;
 	}
 
-	public void setIVA(double iVA) {
-		IVA = iVA;
+	public void setIVA(double IVA) {
+		this.IVA = IVA;
 	}
 
 	public double getPVP() {
 		return PVP;
 	}
 
-	public void setPVP(double pVP) {
-		PVP = pVP;
+	public void setPVP(double PVP) {
+		this.PVP = PVP;
 	}
 
 	public String getName() {
