@@ -148,7 +148,7 @@
 					<h:outputText value="Name: " />
 					<br/>
 					<h:inputText style="width:90px;"  value="#{ProductBean.newProduct.name}" required="false" />
-					<p:commandButton style="font-size:10px;" value="save"
+					<p:commandButton style="font-size:10px;" value="save name"
 						action="#{ProductBean.editProductName(ProductBean.newProduct.entityId, ProductBean.newProduct.name)}" 
 						update=":j_idt31:ProductTable"
 						/>
@@ -157,7 +157,7 @@
 					<h:outputText value="Val: " />
 					<br/>
 					<h:inputText style="width:90px;"  value="#{ProductBean.newProduct.val}" required="false" />
-					<p:commandButton style="font-size:10px;" value="save"
+					<p:commandButton style="font-size:10px;" value="save val"
 						action="#{ProductBean.editProductVal(ProductBean.newProduct.entityId, ProductBean.newProduct.val)}"
 						update=":j_idt31:ProductTable"
 						/>
@@ -166,7 +166,7 @@
 					<h:outputText value="PVP: " />
 					<br/>
 					<h:inputText style="width:90px;"  value="#{ProductBean.newProduct.PVP}" required="false" />
-					<p:commandButton style="font-size:10px;" value="save"
+					<p:commandButton style="font-size:10px;" value="save PVP"
 						action="#{ProductBean.editProductPVP(ProductBean.newProduct.entityId, ProductBean.newProduct.PVP)}"
 						update=":j_idt31:ProductTable"
 						/>	
@@ -176,13 +176,12 @@
 					<br/>
 					<!--  <h:inputText style="width:90px;" value="#{ProductBean.newProduct.IVA}" required="true" /> -->
 					
-					<p:selectOneRadio style="margin-left:10px" id="IVA" value="#{ProductBean.newProduct.IVA}">
+					<p:selectOneRadio style="font-size:12px;" id="IVA" value="#{ProductBean.newProduct.IVA}">
            						 <f:selectItem itemLabel="6" itemValue="6" />
            						 <f:selectItem itemLabel="13" itemValue="13" />
           						  <f:selectItem itemLabel="23" itemValue="23" />
       					 </p:selectOneRadio>
-					
-					<p:commandButton style="font-size:10px;" value="save"
+					<p:commandButton style="font-size:10px;" value="save IVA"
 						action="#{ProductBean.editProductIVA(ProductBean.newProduct.entityId, ProductBean.newProduct.IVA)}"
 						update=":j_idt31:ProductTable"
 						/>
