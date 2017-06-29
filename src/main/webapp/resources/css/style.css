@@ -32,9 +32,16 @@ body {
 	background-color: #000000;
 }
 
-#TabelaProdutos {
+.AddProducts, .RemoveProducts {
 	margin-top: 20px;
+	display: inline-block;
 }
+
+.divider {
+	width: 50px;
+}
+
+
 
 /* {
 	font-family: arial;

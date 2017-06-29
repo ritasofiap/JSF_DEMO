@@ -24,11 +24,11 @@
 	</div>
 
 
-	<div class="container-fluid">
+<div class="container-fluid">
 
-		<div class="row" id="TabelaProdutos">
+		<div class="row" id="Produtos">
 			
-			<div class="col-md-8 col-md-offset-2">
+			<div class="ViewProducts col-md-8 col-md-offset-2">
 
 				<h:form>
 
@@ -70,9 +70,9 @@
 			</div>
 		</div>
 
-
+<div class="ProductActions col-md-8 col-md-offset-2">
 	
-		<div class="col-md-8 col-md-offset-2">
+		<div class="AddProducts">
 				<h3>Add product</h3>
 				<p></p>
 
@@ -107,7 +107,10 @@
 					
 
 				</h:form>
-
+			</div>
+		
+		
+		<div class="RemoveProducts">
 				<h3>Remove product</h3>
 
 				<h:form>		
@@ -124,8 +127,12 @@
 					<p:commandButton value="Clear all products"
 						action="#{ProductBean.clearTable()}" update=":j_idt31:ProductTable"/>
 					
-			</div>
+			
 		</div>
+	</div>
+</div>
+
+		
 
 
 
