@@ -41,7 +41,7 @@
 							<h:outputText value="#{Product.entityId}" />
    						</p:column>
 
-						<p:column headerText="Nome">
+						<p:column headerText="Name">
 							<h:outputText value="#{Product.name}" />
 						</p:column>
 
@@ -53,16 +53,12 @@
 							<h:outputText value="#{Product.IVA}" />
 						</p:column>
 
-						<p:column headerText="PVP $">
+						<p:column headerText="PVP €">
 							<h:outputText value="#{Product.PVP}" />
 						</p:column>
 
 					</p:dataTable>
 
-					<p></p>
-					<p:button outcome="index" value="Back">
-					</p:button>
-					<p></p>
 				</h:form>
 
 				<p></p>
@@ -74,7 +70,7 @@
 <div class="ProductActions flex-container flex-item col-xs-10 col-xs-offset-1">
 	
 		<div class="AddProducts flex-item">
-				<h3 style="color:#2190d9;"><b>Add product</b></h3>
+				<h3 style="color:#2190d9;"><b>Add</b></h3>
 				<p></p>
 
 
@@ -105,7 +101,7 @@
       					 </p:selectOneRadio>
 					<br/>
 					<br />
-				<p:commandButton value="Submit Product"
+				<p:commandButton value="Submit"
 						action="#{ProductBean.addNewProduct()}" update=":j_idt31:ProductTable"/>
 				</h:form>
 			</div>
@@ -113,15 +109,15 @@
 		<div class="divider"></div>
 		
 		<div class="RemoveProducts flex-item">
-				<h3 style="color:#2190d9;"><b>Remove products</b></h3>
+				<h3 style="color:#2190d9;"><b>Delete</b></h3>
 
 				<h:form>		
 			Select a product (<b>ID</b>) to remove:
 					<br/>
-					<h:inputText value="#{ProductBean.newProduct.entityId}" required="true" />
+					<h:inputText style="width: 50px;" value="#{ProductBean.newProduct.entityId}" required="true" />
 					<br/>	
 					<br/>
-					<p:commandButton value="Remove Product"
+					<p:commandButton value="Delete"
 						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" update=":j_idt31:ProductTable"/>
 				
 				</h:form>
@@ -137,12 +133,12 @@
 		<div class="divider"></div>
 		
 		<div class="EditProducts flex-item">
-				<h3 style="color:#2190d9;"><b>Edit products</b></h3>
+				<h3 style="color:#2190d9;"><b>Edit</b></h3>
 
 				<h:form style="text-align:left;">		
 			Select a product (<b>ID</b>) to edit:
 					<br/>
-					<h:inputText value="#{ProductBean.newProduct.entityId}" required="true" />
+					<h:inputText style="width: 50px; text-align:center;" value="#{ProductBean.newProduct.entityId}" required="true" />
 					<br/>
 					<br/>
 					<h:outputText value="Name: " />
@@ -197,11 +193,11 @@
 		
 		
 	</div>
-</div>
-
-		
-
-
+</div>	
+		<div class="backbutton col-xs-4">
+		<p:button outcome="index" value="Back">
+		</p:button>
+		</div>			
 
 	<div id="footer">
 		<ui:insert name="footer">

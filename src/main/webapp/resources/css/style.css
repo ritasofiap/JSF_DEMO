@@ -71,8 +71,6 @@ body {
 	
 }
 
-
-
 .divider {
 	width: 30px;
 }
@@ -83,6 +81,10 @@ body {
     justify-content: center; /* Horizontal center alignment */
 }
 
+.backbutton{
+		text-align: center;
+		margin-top: 20px;
+}
 
 
 
