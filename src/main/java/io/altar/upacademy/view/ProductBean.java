@@ -50,14 +50,32 @@ public class ProductBean {
     	productService.clearTable();
     }
     
+    
+    
+    
+    public void  editProductName(Integer entityId, String name){
+ 	   productService.editProductName(entityId, name);
+    }
+    
+    public void  editProductVal(Integer entityId, Double val){
+  	   productService.editProductVal(entityId, val);
+     }
+    
+    public void  editProductIVA(Integer entityId, Double IVA){
+  	   productService.editProductIVA(entityId, IVA);
+     }
+    
+    public void  editProductPVP(Integer entityId, Double PVP){
+  	   productService.editProductPVP(entityId, PVP);
+     }
+     
+    
+    
  /*   public void getProduct(Integer entityId){
     	productService.getProduct(entityId);
     }*/
     
     
- /*  public void  editProduct(){
-	   productService.editProduct(newProduct);
-   }*/
     
 
    /* public ProductService getProductService() {

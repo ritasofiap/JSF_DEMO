@@ -55,10 +55,25 @@ public class ProductService {
 	}
 	
 	
-	/*public void editProduct(Product product) {
-		productList.editEntityProduct(product.getEntityId(), product.getName(), product.getVal(), product.getIVA(), product.getPVP());
-	}
-	*/
+
+	
+	  public void  editProductName(Integer entityId, String name){
+		  productList.editProductName(entityId, name);
+	    }
+	    
+	    public void  editProductVal(Integer entityId, Double val){
+	    	productList.editProductVal(entityId, val);
+	     }
+	    
+	    public void  editProductIVA(Integer entityId, Double IVA){
+	    	productList.editProductIVA(entityId, IVA);
+	     }
+	    
+	    public void  editProductPVP(Integer entityId, Double PVP){
+	    	productList.editProductPVP(entityId, PVP);
+	     }
+	
+	
 	
 	
 	/*public List<Product> createProducts(int size) {
