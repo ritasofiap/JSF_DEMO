@@ -32,7 +32,7 @@
 <h:form>		
 		
 		<p:dataTable 
-			id="ProductList" 
+			id="ProductTable" 
 			var="Product" 
 			value="#{productBean.getProducts()}" 
 			rowKey="#{Product.entityId}"
@@ -81,30 +81,30 @@
 
 
 <h:form>
-         <h:panelGrid columns="2">
+   
+        
         <h:outputText value="Nome: " />
         <br/>
-        <p:inputText value="#{productBean.newProduct.name}" required="true"/>
+        <h:inputText value="#{productBean.newProduct.name}" required="true"/>
 <br/>
         <h:outputText value="Val: " />
         <br/>
-        <p:inputText value="#{productBean.newProduct.val}" required="true"/>
+        <h:inputText value="#{productBean.newProduct.val}" required="true"/>
  <br/>
         <h:outputText value="IVA: " />
         <br/>
-        <p:inputText value="#{productBean.newProduct.IVA}" required="true"/>
+        <h:inputText value="#{productBean.newProduct.IVA}" required="true"/>
  <br/>
         <h:outputText value="PVP: " />
         <br/>
-        <p:inputText value="#{productBean.newProduct.PVP}" required="true"/>
+        <h:inputText value="#{productBean.newProduct.PVP}" required="true"/>
   <br/>
-  </h:panelGrid>
+  
  <br/>       
   
  
     <h:commandButton value="Submit Product" 
     					action="#{productBean.addNewProduct()}"
-    					update="ProductTable"
     					/>
  
 </h:form>

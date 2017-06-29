@@ -15,7 +15,6 @@ import io.altar.upacademy.model.Product;
 public class ProductService {
 	
 	
-	
 	//@Inject
 	//private ProductRepository productList;
 	private ProductRepository productList = ProductRepository.getInstance();
@@ -28,25 +27,21 @@ public class ProductService {
 		this.productList = productList;
 	}
 
-	
-	
 	public Collection<Product> getProducts(){
 		return productList.getEntities();
 	}
-
 	
 	public ProductService() {
     }
-	
-	
+		
 	public void addToRep(Product product) {
 		productList.addEntityId(product);
 	}
 	
-	public void editProduct(Product product) {
+	/*public void editProduct(Product product) {
 		productList.editEntityProduct(product.getEntityId(), product.getName(), product.getVal(), product.getIVA(), product.getPVP());
 	}
-	
+	*/
 	
 	
 	/*public List<Product> createProducts(int size) {

@@ -18,7 +18,6 @@ public class EntityRepository<E extends Entity> {
 	
 	//private List<E> listView = new ArrayList<>();
 
-
 	public void setEntities(LinkedHashMap<Integer, E> entities) {
 		this.entities = entities;
 	}
@@ -33,8 +32,6 @@ public class EntityRepository<E extends Entity> {
 		return ++index;
 	}
 	
-	
-	
 	/*public List<E> getListView() {
 		return listView;
 	}
@@ -43,40 +40,39 @@ public class EntityRepository<E extends Entity> {
 		this.listView = listView;
 	}*/
 	
-
-	//add
+	//read------------------------------------------------
+			public E findByEntityId(Integer entityId){
+				return entities.get(entityId);
+			}
+			
+			public int getEntityIndex(E entity){
+				return index;  
+			}
+		
+	//add------------------------------------------------
 	public void addEntityId(E entity){
 			int newEntityId = getNextEntityId();
 			entity.setEntityId(newEntityId);
 			entities.put(entity.getEntityId(), entity);		
 		}
-		
-	public int getEntityIndex(E entity){
-			return index;  
-		}
-	
-	//remove
+			
+	//remove------------------------------------------------
 	public void removeEntity(Integer entityId){
 		entities.remove(entityId);
 	}
 		
-	//edit
+	//edit------------------------------------------------
 	public void editEntity(){
 		//entities.put(index, entity);  //getId() //vazio	
 	}
 	
-	//read
-		public E findByEntityId(Integer entityId){
-			return entities.get(entityId);
-		}
 	
-	//show
-	/*public void displayEntity(Integer key){
-		System.out.println(entities.get(key).toString());
-	}*/
 		
 	
-	//check if empty
+	
+		
+		
+	//check if empty------------------------------------------------
 		public boolean isEmpty(){
 			return entities.isEmpty();
 		}
@@ -92,6 +88,14 @@ public class EntityRepository<E extends Entity> {
 		}
 	
 	
+		
+		
+		//show------------------------------------------------
+		/*public void displayEntity(Integer key){
+			System.out.println(entities.get(key).toString());
+		}*/
+		
+		
 	/*public void editEntity(Integer entityId, String name, Double val, Double IVA, Double PVP) {
 		
 		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setName(name);
@@ -101,9 +105,6 @@ public class EntityRepository<E extends Entity> {
 	}*/
 
 
-
-	
-		
 	/*public static void editEntity(Integer entityId, Integer shelfLocal, Integer shelfCapacity, Double shelfDailyCost) {
 		
 		((Shelf)ShelfRepository.getInstance().findByEntityId(entityId)).setShelfLocal(shelfLocal);

@@ -1,6 +1,5 @@
 package io.altar.upacademy.view;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import javax.inject.Inject;
@@ -12,13 +11,12 @@ import io.altar.upacademy.service.ProductService;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-//@Named("ProductBean")
-@ManagedBean(name="productBean")
+@Named("ProductBean")
+//@ManagedBean(name="productBean")
 @RequestScoped
 
-public class ProductBean implements Serializable {
+public class ProductBean {
 	
-	private static final long serialVersionUID = 1L;
 
 	private Product newProduct = new Product();
  
