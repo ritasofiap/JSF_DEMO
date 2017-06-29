@@ -2,7 +2,7 @@ package io.altar.upacademy.service;
 
 import java.util.Collection;
 
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import io.altar.upacademy.repositories.ProductRepository;
@@ -30,12 +30,30 @@ public class ProductService {
 		return productList.getEntities();
 	}
 	
+	
+	
+	public Product getProduct(Integer entityId){
+		return productList.findByEntityId(entityId);
+	}
+	
+	
+	
 	public ProductService() {
     }
 		
 	public void addToRep(Product product) {
 		productList.addEntityId(product);
 	}
+	
+	
+	public void removeFromRep(Integer entityId) {
+		productList.removeEntityFromTable(getProduct(entityId));
+	}
+	
+	public void clearTable(){
+		productList.clearTable();
+	}
+	
 	
 	/*public void editProduct(Product product) {
 		productList.editEntityProduct(product.getEntityId(), product.getName(), product.getVal(), product.getIVA(), product.getPVP());
@@ -55,7 +73,8 @@ public class ProductService {
 	
 	
 	 
-}	
+	
+}
 	
 	
 	

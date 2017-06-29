@@ -55,9 +55,19 @@ public class EntityRepository<E extends Entity> {
 			
 	//remove------------------------------------------------
 	public void removeEntity(Integer entityId){
+		System.out.println(1);
 		entities.remove(entityId);
 	}
+	
+	public void clearTable(){
+		entities.clear();
+	}
 		
+	
+	public void removeEntityFromTable(E entity){
+		
+    	entities.remove(entity.getEntityId(), entity);    	
+	}
 	//edit------------------------------------------------
 	public void editEntity(){
 		//entities.put(index, entity);  //getId() //vazio	

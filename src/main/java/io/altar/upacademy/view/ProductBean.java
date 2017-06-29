@@ -1,15 +1,15 @@
 package io.altar.upacademy.view;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.upacademy.model.Product;
 import io.altar.upacademy.service.ProductService;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
 @Named("ProductBean")
 //@ManagedBean(name="productBean")
@@ -38,9 +38,21 @@ public class ProductBean {
     	productService.addToRep(newProduct);
     }
     
-    public Collection<Product> getProducts(){
-    	return productService.getProducts();
+    public List<Product> getProducts(){
+    	return new ArrayList<Product>((Collection<Product>)productService.getProducts());
     }
+    
+    public void removeProduct(Integer entityId) {
+    	productService.removeFromRep(entityId);
+    }
+    
+    public void clearTable(){
+    	productService.clearTable();
+    }
+    
+ /*   public void getProduct(Integer entityId){
+    	productService.getProduct(entityId);
+    }*/
     
     
  /*  public void  editProduct(){

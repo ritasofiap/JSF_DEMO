@@ -1,14 +1,11 @@
 package io.altar.upacademy.repositories;
 
 
-import javax.faces.bean.ApplicationScoped;
-import javax.inject.Named;
-
 import io.altar.upacademy.model.Product;
 
 
-@Named("productRepository")
-@ApplicationScoped
+//@Named("productRepository")
+//@ApplicationScoped
 
 public class ProductRepository extends EntityRepository<Product> {
 	

@@ -12,6 +12,12 @@ h2 {
 	font-size: 5px;
 }
 
+h3 {
+	font-family: arial;
+	color: #2190d9;
+	font-size: 5px;	
+}
+
 header {
 		margin-top:0px;
 		font-family: arial;
@@ -24,6 +30,10 @@ footer {
 
 body {
 	background-color: #000000;
+}
+
+#TabelaProdutos {
+	margin-top: 20px;
 }
 
 /* {
