@@ -22,9 +22,11 @@ public class ProductRepository extends EntityRepository<Product> {
 	}
 	
     
-    /*public void addProduct(){
-	addEntityId(new Product());
-}*/
+    
+    
+   /* public void addProduct(){
+    	addEntityId(new Product());
+    }*/
     
     
 	/*public void editEntityProduct (int entityId, String name, double val, double IVA, double PVP){
@@ -35,8 +37,6 @@ public class ProductRepository extends EntityRepository<Product> {
 	
 	}    
     */
-    
-    
     
 	//  private static ProductRepository instance;	
 	/*public static ProductRepository getInstance(){

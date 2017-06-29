@@ -3,7 +3,6 @@ package io.altar.upacademy.service;
 import java.util.Collection;
 
 import javax.faces.bean.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import io.altar.upacademy.repositories.ProductRepository;

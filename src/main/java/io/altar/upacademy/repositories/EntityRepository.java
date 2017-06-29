@@ -2,13 +2,10 @@ package io.altar.upacademy.repositories;
 
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Set;
 
 import io.altar.upacademy.model.Entity;
-import io.altar.upacademy.model.Product;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 
@@ -41,13 +38,13 @@ public class EntityRepository<E extends Entity> {
 	}*/
 	
 	//read------------------------------------------------
-			public E findByEntityId(Integer entityId){
-				return entities.get(entityId);
-			}
+	public E findByEntityId(Integer entityId){
+		return entities.get(entityId);
+		}
 			
-			public int getEntityIndex(E entity){
-				return index;  
-			}
+	public int getEntityIndex(E entity){
+		return index;  
+		}
 		
 	//add------------------------------------------------
 	public void addEntityId(E entity){
