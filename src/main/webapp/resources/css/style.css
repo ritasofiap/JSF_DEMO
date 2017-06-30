@@ -26,7 +26,7 @@ footer {
 }
 
 body {
-	background-color: #000000;
+	/*background-color: !important; */
 }
 
 .titulo{
@@ -47,7 +47,7 @@ body {
 	color: blue;
 }
 
-.AddProducts, .RemoveProducts, .EditProducts {
+.AddProducts, .EditProducts, .RemoveProducts {
 	/*border-style: solid;
     border-color: #808080;*/
     border-width: 1px;
@@ -56,7 +56,7 @@ body {
     
 }
 
-.AddProducts, .EditProducts {
+.AddProducts, .EditProducts, .RemoveProducts {
 	padding-top: 5px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -79,6 +79,7 @@ body {
     display:flex;
     align-items: top; /* Vertical center alignment */
     justify-content: center; /* Horizontal center alignment */
+   
 }
 
 .backbutton{

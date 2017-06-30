@@ -9,37 +9,31 @@
 	<h:outputStylesheet name="css/style.css" />
 	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
 	<h:outputScript name="bootstrap/js/bootstrap.js" />
-
+ 
 	<!--  <link href=”resources/bootstrap/css/bootstrap.min.css” rel=”stylesheet” type=”text/css” />
 		<script type=”text/javascript” src=”resources/bootstrap/js/bootstrap.min.js”></script>
 		-->
 </h:head>
 <h:body>
-
-
 	<div id="header">
 		<ui:insert name="header">
 			<ui:include src="/template/common/commonHeader.xhtml" />
 		</ui:insert>
 	</div>
-
-
-<div class="container-fluid ">
-
+	<div class="container-fluid ">
 		<div class="row " id="Produtos">
-			
-			
 			<div class="ViewProducts col-xs-8 col-xs-offset-2">
-				<h3 style="color:#2190d9;"><b>Available Products</b></h3>
+				<h3 style="color: #2190d9;">
+					<b>Available Products</b>
+				</h3>
 				<h:form>
-
 					<p:dataTable id="ProductTable" var="Product"
 						value="#{ProductBean.getProducts()}" rowKey="#{Product.entityId}"
 						emptyMessage="No products found">
 
 						<p:column headerText="ID">
 							<h:outputText value="#{Product.entityId}" />
-   						</p:column>
+						</p:column>
 
 						<p:column headerText="Name">
 							<h:outputText value="#{Product.name}" />
@@ -56,148 +50,146 @@
 						<p:column headerText="PVP €">
 							<h:outputText value="#{Product.PVP}" />
 						</p:column>
-
 					</p:dataTable>
-
 				</h:form>
-
 				<p></p>
 				<p></p>
-
 			</div>
 		</div>
 
-<div class="ProductActions flex-container flex-item col-xs-10 col-xs-offset-1">
-	
-		<div class="AddProducts flex-item">
-				<h3 style="color:#2190d9;"><b>Add</b></h3>
+		<div
+			class="ProductActions flex-container flex-item col-xs-10 col-xs-offset-1">
+
+			<div class="AddProducts flex-item">
+				<h3 style="color: #2190d9;">
+					<b>Add</b>
+				</h3>
 				<p></p>
-
-
 				<h:form>
 					Add product details:
-					<br/>
-					<br/>
+					<br />
+					<br />
 					<h:outputText value="Name: " />
-					<br/>
-					<h:inputText value="#{ProductBean.newProduct.name}" placeholder="Enter name" required="true" />
-					<br/>
+					<br />
+					<h:inputText value="#{ProductBean.newProduct.name}"
+						placeholder="Enter name" required="true" />
+					<br />
 					<h:outputText value="Val: " />
-					<br/>
-					<h:inputText  value="#{ProductBean.newProduct.val}" required="true" />
-					<br/>
+					<br />
+					<h:inputText value="#{ProductBean.newProduct.val}" required="true" />
+					<br />
 					<h:outputText value="PVP: " />
-					<br/>
+					<br />
 					<h:inputText value="#{ProductBean.newProduct.PVP}" required="true" />
 					<br />
-					<br/>
-					<h:outputText value="IVA: " />
-					<br/>
-					<!--  <h:inputText value="#{ProductBean.newProduct.IVA}" required="true" /> -->
-						<p:selectOneRadio style="margin-left:10px" id="IVA" value="#{ProductBean.newProduct.IVA}">
-           						 <f:selectItem itemLabel="6" itemValue="6" />
-           						 <f:selectItem itemLabel="13" itemValue="13" />
-          						  <f:selectItem itemLabel="23" itemValue="23" />
-      					 </p:selectOneRadio>
-					<br/>
 					<br />
-				<p:commandButton value="Submit"
-						action="#{ProductBean.addNewProduct()}" update=":j_idt31:ProductTable"/>
+					<h:outputText value="IVA: " />
+					<br />
+					<!--  <h:inputText value="#{ProductBean.newProduct.IVA}" required="true" /> -->
+					<p:selectOneRadio style="margin-left:10px" id="IVA"
+						value="#{ProductBean.newProduct.IVA}">
+						<f:selectItem itemLabel="6" itemValue="6" />
+						<f:selectItem itemLabel="13" itemValue="13" />
+						<f:selectItem itemLabel="23" itemValue="23" />
+					</p:selectOneRadio>
+					<br />
+					<br />
+					<p:commandButton value="Submit"
+						action="#{ProductBean.addNewProduct()}"
+						update=":j_idt31:ProductTable" />
 				</h:form>
 			</div>
-		
-		<div class="divider"></div>
-		
-		<div class="RemoveProducts flex-item">
-				<h3 style="color:#2190d9;"><b>Delete</b></h3>
+
+			<div class="divider"></div>
+
+			<div class="RemoveProducts flex-item">
+				<h3 style="color: #2190d9;">
+					<b>Delete</b>
+				</h3>
 
 				<h:form>		
 			Select a product (<b>ID</b>) to remove:
-					<br/>
-					<h:inputText style="width: 50px;" value="#{ProductBean.newProduct.entityId}" required="true" />
-					<br/>	
-					<br/>
+					<br />
+					<h:inputText style="width: 50px;"
+						value="#{ProductBean.newProduct.entityId}" required="true" />
+					<br />
+					<br />
 					<p:commandButton value="Delete"
-						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}" update=":j_idt31:ProductTable"/>
-				
-				</h:form>
-				
-					<br/>
-				<b>Or</b>		
-					<br/>
-					<br/>
-					<p:commandButton value="Clear all products"
-						action="#{ProductBean.clearTable()}" update=":j_idt31:ProductTable"/>
-		</div>
-		
-		<div class="divider"></div>
-		
-		<div class="EditProducts flex-item">
-				<h3 style="color:#2190d9;"><b>Edit</b></h3>
+						action="#{ProductBean.removeProduct(ProductBean.newProduct.entityId)}"
+						update=":j_idt31:ProductTable" />
 
-				<h:form style="text-align:left;">		
+				</h:form>
+
+				<br /> <b>Or</b> <br /> <br />
+				<p:commandButton value="Clear all products"
+					action="#{ProductBean.clearTable()}" update=":j_idt31:ProductTable" />
+			</div>
+
+			<div class="divider"></div>
+
+			<div class="EditProducts flex-item">
+				<h3 style="color: #2190d9;">
+					<b>Edit</b>
+				</h3>
+
+				<h:form style="text-align:left; width: 200px;">		
 			Select a product (<b>ID</b>) to edit:
-					<br/>
-					<h:inputText style="width: 50px; text-align:center;" value="#{ProductBean.newProduct.entityId}" required="true" />
-					<br/>
-					<br/>
+					<br />
+					<h:inputText style="width: 50px; text-align:center;"
+						value="#{ProductBean.newProduct.entityId}" required="true" />
+					<br />
+					<br />
 					<h:outputText value="Name: " />
-					<br/>
-					<h:inputText style="width:90px;"  value="#{ProductBean.newProduct.name}" required="false" />
+					<br />
+					<h:inputText style="width:90px;"
+						value="#{ProductBean.newProduct.name}" required="false" />
 					<p:commandButton style="font-size:10px;" value="save name"
-						action="#{ProductBean.editProductName(ProductBean.newProduct.entityId, ProductBean.newProduct.name)}" 
-						update=":j_idt31:ProductTable"
-						/>
-					<br/>		
-					<br/>
+						action="#{ProductBean.editProductName(ProductBean.newProduct.entityId, ProductBean.newProduct.name)}"
+						update=":j_idt31:ProductTable" />
+					<br />
+					<br />
 					<h:outputText value="Val: " />
-					<br/>
-					<h:inputText style="width:90px;"  value="#{ProductBean.newProduct.val}" required="false" />
+					<br />
+					<h:inputText style="width:90px;"
+						value="#{ProductBean.newProduct.val}" required="false" />
 					<p:commandButton style="font-size:10px;" value="save val"
 						action="#{ProductBean.editProductVal(ProductBean.newProduct.entityId, ProductBean.newProduct.val)}"
-						update=":j_idt31:ProductTable"
-						/>
-					<br/>
-					<br/>
+						update=":j_idt31:ProductTable" />
+					<br />
+					<br />
 					<h:outputText value="PVP: " />
-					<br/>
-					<h:inputText style="width:90px;"  value="#{ProductBean.newProduct.PVP}" required="false" />
+					<br />
+					<h:inputText style="width:90px;"
+						value="#{ProductBean.newProduct.PVP}" required="false" />
 					<p:commandButton style="font-size:10px;" value="save PVP"
 						action="#{ProductBean.editProductPVP(ProductBean.newProduct.entityId, ProductBean.newProduct.PVP)}"
-						update=":j_idt31:ProductTable"
-						/>	
-					<br/>
-					<br/>
+						update=":j_idt31:ProductTable" />
+					<br />
+					<br />
 					<h:outputText value="IVA: " />
-					<br/>
+					<br />
 					<!--  <h:inputText style="width:90px;" value="#{ProductBean.newProduct.IVA}" required="true" /> -->
 					
-					<p:selectOneRadio style="font-size:12px;" id="IVA" value="#{ProductBean.newProduct.IVA}">
-           						 <f:selectItem itemLabel="6" itemValue="6" />
-           						 <f:selectItem itemLabel="13" itemValue="13" />
-          						  <f:selectItem itemLabel="23" itemValue="23" />
-      					 </p:selectOneRadio>
+					<p:selectOneRadio style="font-size:12px;" id="IVA"
+						value="#{ProductBean.newProduct.IVA}">
+						<f:selectItem itemLabel="6" itemValue="6" />
+						<f:selectItem itemLabel="13" itemValue="13" />
+						<f:selectItem itemLabel="23" itemValue="23" />
+					</p:selectOneRadio>
 					<p:commandButton style="font-size:10px;" value="save IVA"
 						action="#{ProductBean.editProductIVA(ProductBean.newProduct.entityId, ProductBean.newProduct.IVA)}"
-						update=":j_idt31:ProductTable"
-						/>
-					<br/>
-					<br/>	
-					
+						update=":j_idt31:ProductTable" />
+					<br />
+					<br />
+
 				</h:form>
-			
-					
-			
+			</div>
 		</div>
-		
-		
-		
 	</div>
-</div>	
-		<div class="backbutton col-xs-4">
+	<div class="backbutton col-xs-4">
 		<p:button outcome="index" value="Back">
 		</p:button>
-		</div>			
+	</div>
 
 	<div id="footer">
 		<ui:insert name="footer">
