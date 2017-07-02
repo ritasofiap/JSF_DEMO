@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+	<h:outputScript name="bootstrap/js/bootstrap.js" />
+ 
+	<!--  <link href=”resources/bootstrap/css/bootstrap.min.css” rel=”stylesheet” type=”text/css” />
+		<script type=”text/javascript” src=”resources/bootstrap/js/bootstrap.min.js”></script>
+		-->
+</h:head>
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonHeader.xhtml" />
+		</ui:insert>
+	</div>
+	<div class="container-fluid ">
+		<div class="row " id="Prateleiras">
+			<div class="ViewShelves col-xs-8 col-xs-offset-2">
+				
+				<h2>
+					<b>Available Shelves</b>
+				</h2>
+			
+				<h:form>
+					<p:dataTable id="ShelfTable" var="Shelf"
+						value="#{ShelfBean.getShelf()}" rowKey="#{Shelf.entityId}"
+						emptyMessage="No shelves found">
+
+						<p:column headerText="ID">
+							<h:outputText value="#{Shelf.entityId}" />
+						</p:column>
+
+						<p:column headerText="Local">
+							<h:outputText value="#{Shelf.shelfLocal}" />
+						</p:column>
+
+						<p:column headerText="Capacity">
+							<h:outputText value="#{Shelf.shelfCapacity}" />
+						</p:column>
+
+						<p:column headerText="Daily Cost €">
+							<h:outputText value="#{Shelf.shelfDailyCost}" />
+						</p:column>
+
+					</p:dataTable>
+				</h:form>
+				<p></p>
+				<p></p>
+			</div>
+		</div>
+
+		<div
+			class="ShelfActions flex-container flex-item col-xs-10 col-xs-offset-1">
+
+			<div class="Add flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-folder-open"></span><b> Add</b>
+				</h3>
+				<p></p>
+				<h:form>
+					Add shelf details:
+					<br />
+					<br />
+				
+					<h:outputText value="Capacity: " />
+					<br />
+					<p:spinner id="minMax" value="#{ShelfBean.newShelf.shelfCapacity}" min="0" max="50" />
+ 					<br />
+					<br />
+					<h:outputText value="Daily Cost: " />
+					<br />
+					<h:inputText style="width: 70px;" value="#{ShelfBean.newShelf.shelfDailyCost}" required="true" />
+					<br />
+					<br />
+						<h:outputText value="Placement Code: " />
+					<br />
+			
+        <p:selectOneMenu id="local" value="#{ShelfBean.newShelf.shelfLocal}" style="width:125px; font-size:11px;">
+           	<f:selectItem style="font-size:11px;" itemLabel="Select One" itemValue="" />
+            <f:selectItem style="font-size:11px;" itemLabel="Upper Shelf" itemValue="Upper Shelf" />
+            <f:selectItem style="font-size:11px;" itemLabel="Middle Shelf" itemValue="Middle Shelf" />
+            <f:selectItem style="font-size:11px;" itemLabel="Bottom Shelf" itemValue="Bottom Shelf" />
+        </p:selectOneMenu>
+					
+					<br />
+					<br />
+					<!--  <h:inputText value="#{ProductBean.newProduct.IVA}" required="true" /> -->
+					
+					<p:commandButton value="Submit"
+						action="#{ShelfBean.addNewShelf()}"
+						update=":j_idt31:ShelfTable" />
+				</h:form>
+			</div>
+
+			<div class="divider"></div>
+
+			<div class="Remove flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
+				</h3>
+
+				<h:form>		
+			Select a shelf (<b>ID</b>) to remove:
+					<br />
+					<h:inputText style="width: 50px;"
+						value="#{ShelfBean.newShelf.entityId}" required="true" />
+					<br />
+					<br />
+					<p:commandButton value="Delete"
+						action="#{ShelfBean.removeShelf(ShelfBean.newShelf.entityId)}"
+						update=":j_idt31:ShelfTable" />
+
+				</h:form>
+
+				<br /> <b>Or</b> <br /> <br />
+				<p:commandButton value="Clear all shelves"
+					action="#{ShelfBean.clearTable()}" update=":j_idt31:ShelfTable" />
+			</div>
+
+			<div class="divider"></div>
+
+			<div class="Edit flex-item">
+				<h3>
+					<span class="glyphicon glyphicon-edit"></span><b> Edit</b>
+				</h3>
+
+				<h:form style="text-align:left; width: 200px;">		
+			Select a shelf (<b>ID</b>) to edit:
+					<br />
+					<h:inputText style="width: 50px; text-align:center;"
+						value="#{ShelfBean.newShelf.entityId}" required="true" />
+					<br />
+				
+					<br />
+			
+					<h:outputText value="Capacity: " />
+					<br />
+					<p:spinner id="minMax" value="#{ShelfBean.newShelf.shelfCapacity}" min="0" max="50" />
+					
+					<p:commandButton style="font-size:10px;" value="save" 
+						action="#{ShelfBean.editShelfCapacity(ShelfBean.newShelf.entityId, ShelfBean.newShelf.shelfCapacity)}"
+						update=":j_idt31:ShelfTable" />
+					<br />
+					<br />
+					<h:outputText value="Daily Cost: " />
+					<br />
+					<h:inputText style="width:70px;"
+						value="#{ShelfBean.newShelf.shelfDailyCost}" required="false" />
+					<p:commandButton style="font-size:10px;" value="save" 
+						action="#{ShelfBean.editShelfDailyCost(ShelfBean.newShelf.entityId, ShelfBean.newShelf.shelfDailyCost)}"
+						update=":j_idt31:ShelfTable" />
+					<br />
+					<br />
+					<h:outputText value="Placement Code: " />
+					<br />
+										
+					 <p:selectOneMenu id="local" value="#{ShelfBean.newShelf.shelfLocal}" style="width:125px; font-size:11px;">
+           					<f:selectItem itemLabel="Select One" itemValue="" />
+           					<f:selectItem itemLabel="Upper Shelf" itemValue="Upper Shelf" />
+          					<f:selectItem itemLabel="Middle Shelf" itemValue="Middle Shelf" />
+           					<f:selectItem itemLabel="Bottom Shelf" itemValue="Bottom Shelf" />
+       				 </p:selectOneMenu>
+					
+					<p:commandButton style="font-size:10px;" value="save" 
+						action="#{ShelfBean.editShelfLocal(ShelfBean.newShelf.entityId, ShelfBean.newShelf.shelfLocal)}"
+						update=":j_idt31:ShelfTable" />
+					<br />
+					
+
+				</h:form>
+			</div>
+		</div>
+	</div>
+	<div class="backbutton col-xs-4">
+		<p:button outcome="index" value="Back">
+		</p:button>
+	</div>
+
+	<div id="footer">
+		<ui:insert name="footer">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+
+</h:body>
+</html>

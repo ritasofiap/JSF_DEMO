@@ -19,22 +19,33 @@ public class ProductRepository extends EntityRepository<Product> {
 	}
 	
     
+    //--------EDIT
     
     
-   /* public void addProduct(){
+    public void editProductName(Integer entityId, String name){
+		//entities.put(index, entity);  //getId() //vazio	
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setName(name);
+	}
+	
+	public void editProductVal(Integer entityId, Double val){
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setVal(val);
+	}
+	
+	public void editProductIVA(Integer entityId, Double IVA){
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setIVA(IVA);
+	}
+	
+	public void editProductPVP(Integer entityId, Double PVP){
+		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setPVP(PVP);
+	}
+    
+    
+   /* public void addProduct(){https://open.spotify.com/artist/54Xuca1P5nDqfKYZGDfHxl
     	addEntityId(new Product());
     }*/
     
     
-	/*public void editEntityProduct (int entityId, String name, double val, double IVA, double PVP){
-		((Product) findByEntityId(entityId)).setName(name);
-		((Product) findByEntityId(entityId)).setVal(val);
-		((Product) findByEntityId(entityId)).setIVA(IVA);
-		((Product) findByEntityId(entityId)).setPVP(PVP);
-	
-	}    
-    */
-    
+	    
 	//  private static ProductRepository instance;	
 	/*public static ProductRepository getInstance(){
 		 if (instance == null) {

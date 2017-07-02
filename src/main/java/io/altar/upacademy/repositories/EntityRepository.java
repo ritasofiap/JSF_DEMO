@@ -5,7 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.Set;
 
 import io.altar.upacademy.model.Entity;
-import io.altar.upacademy.model.Product;
 
 import java.util.Collection;
 
@@ -69,26 +68,8 @@ public class EntityRepository<E extends Entity> {
 		
     	entities.remove(entity.getEntityId(), entity);    	
 	}
+	
 	//edit------------------------------------------------
-	
-	public void editProductName(Integer entityId, String name){
-		//entities.put(index, entity);  //getId() //vazio	
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setName(name);
-	}
-	
-	public void editProductVal(Integer entityId, Double val){
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setVal(val);
-	}
-	
-	public void editProductIVA(Integer entityId, Double IVA){
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setIVA(IVA);
-	}
-	
-	public void editProductPVP(Integer entityId, Double PVP){
-		((Product)ProductRepository.getInstance().findByEntityId(entityId)).setPVP(PVP);
-	}
-	
-		
 	
 	
 		

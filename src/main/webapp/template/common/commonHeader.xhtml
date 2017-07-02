@@ -17,41 +17,30 @@
 		<div class="row">
 		<div class="titulo col-md-12">
 		
-		<h1 
-		style="color:#2190d9; 
-		font-family:Arial; 
-		font-variant: small-caps;">
-		<b>Stock Management</b></h1> 
+		<h1><b></b></h1> 
 		
 	<h:form>	
-	<p:toolbar style="margin:20px 0px">
+	<p:toolbar style="margin-top:5px 0px">
         <f:facet name="right">
-            <p:commandButton type="button" value="New"  />
-            <p:commandButton type="button" value="Open" />
-         
+            <p:commandButton  type="button" value="Login"/>
+            <p:commandButton type="button" value="Sign Up" />
+   
         </f:facet>
  
         <f:facet name="left">
-            <p:menuButton value="Navigate" style="margin-right:20px">
+            <p:menuButton value="Stock Management" style="margin-right:20px">
                 <p:menuitem value="Home" outcome="index"/>
-                <p:menuitem value="Products" outcome="result"/>
-                <p:menuitem value="Shelves" outcome="result" />
+                <p:menuitem value="Products" outcome="ProductsPage"/>
+                <p:menuitem value="Shelves" outcome="ShelvesPage" />
             </p:menuButton>
             
-          <p:button outcome="result" value="Products" icon="ui-icon-star" style="margin-right:10px" >
+          <p:button outcome="ProductsPage" value="Products" style="margin-right:10px" >
 	</p:button>
-	<p:button outcome="result" value="Shelves" icon="ui-icon-star">
+	<p:button outcome="ShelvesPage" value="Shelves" >
 	</p:button> 
         </f:facet>
     </p:toolbar>
 </h:form>	
-
-
-
-
-
-	
-
 	</div>
 	</div>
 </div>

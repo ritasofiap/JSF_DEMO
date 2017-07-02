@@ -4,47 +4,53 @@ import java.util.ArrayList;
 
 public class Shelf extends Entity{
 
-	private int shelfLocal;
-	private int shelfCapacity;
-	private double shelfDailyCost;
-	
+	private String shelfLocal; //top, middle, bottom
+	private int shelfCapacity; // ex 0 a 50?
+	private double shelfDailyCost; // €
 	private ArrayList<Shelf> shelfProduct = new ArrayList<>();  
 	
-	public Shelf (int shelfLocal, int shelfCapacity, double shelfDailyCost){
+	public Shelf(){
+		
+	}
+	
+	/*public Shelf (String shelfLocal, int shelfCapacity, double shelfDailyCost){
 		this.shelfLocal = shelfLocal;
 		this.shelfCapacity = shelfCapacity;
 		this.shelfDailyCost = shelfDailyCost;
-	}
+	}*/
 
-	public void getShelfProduct(ArrayList<Shelf> shelfProduct) {
-		this.shelfProduct = shelfProduct;
-	}	
-
-	public int getShelfLocal() {
+	public String getShelfLocal() {
 		return shelfLocal;
+	}
+	public void setShelfLocal(String shelfLocal) {
+		this.shelfLocal = shelfLocal;
+	}
+	
+	public void setShelfCapacity(int shelfCapacity) {
+		this.shelfCapacity = shelfCapacity;
 	}
 	
 	public int getShelfCapacity() {
 		return shelfCapacity;
 	}
 	
-	public double getShelfDailyCost() {
-		return shelfDailyCost;
-	}
-
-	public void setShelfLocal(int shelfLocal) {
-		this.shelfLocal = shelfLocal;
-	}
-	public void setShelfCapacity(int shelfCapacity) {
-		this.shelfCapacity = shelfCapacity;
-	}
 	public void setShelfDailyCost(double shelfDailyCost) {
 		this.shelfDailyCost = shelfDailyCost;
 	}
 	
+	public double getShelfDailyCost() {
+		return shelfDailyCost;
+	}
+	
+	
+	
 	public void setShelfProduct(ArrayList<Shelf> shelfProduct) {
 		this.shelfProduct = shelfProduct;
 	}
+	
+	public void getShelfProduct(ArrayList<Shelf> shelfProduct) {
+		this.shelfProduct = shelfProduct;
+	}	
 
 	/*@Override
 	public String toString(){

@@ -1,15 +1,37 @@
 @CHARSET "UTF-8";
 
 
+.stockHome{
+	padding-top:50px;
+	padding-bottom:300px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #e4e4e4;
+}
+
+#stockmanagement{
+	font-size: 30px;
+	text-align: center;
+	
+}
+
 h1 {
+	color: white !important;
+	font-family:Arial !important; 
+	font-variant: small-caps !important;
+	font-size: 20px !important;
 }
 
 h2 {
 	font-family: arial;
+	font-size: 25px !important;
+	color: #0080ff!important;
+	
 }
 
 h3 {
 	font-family: arial;
+	color: #0080ff !important;
 }
 
 header {
@@ -25,29 +47,40 @@ footer {
 		font-weight: bold;
 }
 
-body {
-	/*background-color: !important; */
+#Produtos, #Prateleiras {
+		background-color: #e4e4e4 !important;
+		padding-bottom: 20px;
 }
+
+.ui-spinner-input {
+	height: 25px;
+	width: 70px;
+}
+
+
+body {
+	
+	/*background: linear-gradient(#e4e4e4, #b5b5b5) !important; */
+
+}
+
 
 .titulo{
-	 background-color: #e4e4e4;
+	 background-color: #b5b5b5;
 }
 
-.ViewProducts {
-	margin-top: 20px;
+.ViewProducts, .ViewShelves{
+	margin-top: 10px;
 }
 
-.AddProducts, .RemoveProducts, .EditProducts, .divider {
+.Add, .Remove, .Edit, .divider {
 	margin-top: 20px;
 	display: inline-block;
 	text-align: center;
 }
 
-.AddProducts.h:outputText{
-	color: blue;
-}
 
-.AddProducts, .EditProducts, .RemoveProducts {
+.Add, .Edit, .Remove {
 	/*border-style: solid;
     border-color: #808080;*/
     border-width: 1px;
@@ -56,14 +89,14 @@ body {
     
 }
 
-.AddProducts, .EditProducts, .RemoveProducts {
+.Add, .Edit, .Remove {
 	padding-top: 5px;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-bottom: 10px;
 }
 
-.RemoveProducts, .divider{
+.Remove, .divider{
 	padding-top: 5px;
 	padding-left: 10px;
 	padding-right: 10px;

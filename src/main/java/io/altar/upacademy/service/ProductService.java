@@ -73,7 +73,7 @@ public class ProductService {
 	    	productList.editProductPVP(entityId, PVP);
 	     }
 	
-	
+}	
 	
 	
 	/*public List<Product> createProducts(int size) {
@@ -89,7 +89,7 @@ public class ProductService {
 	
 	 
 	
-}
+
 	
 	
 	

@@ -69,7 +69,7 @@ public class ProductBean {
   	   productService.editProductPVP(entityId, PVP);
      }
      
-    
+}   
     
  /*   public void getProduct(Integer entityId){
     	productService.getProduct(entityId);
@@ -113,5 +113,5 @@ public class ProductBean {
     
     
 	
-}
+
 
