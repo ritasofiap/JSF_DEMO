@@ -9,7 +9,7 @@
 	<h:outputStylesheet name="css/style.css" />
 	<h:outputStylesheet name="bootstrap/css/bootstrap.css" />
 	<h:outputScript name="bootstrap/js/bootstrap.js" />
- 
+
 	<!--  <link href=”resources/bootstrap/css/bootstrap.min.css” rel=”stylesheet” type=”text/css” />
 		<script type=”text/javascript” src=”resources/bootstrap/js/bootstrap.min.js”></script>
 		-->
@@ -30,23 +30,18 @@
 					<p:dataTable id="ProductTable" var="Product"
 						value="#{ProductBean.getProducts()}" rowKey="#{Product.entityId}"
 						emptyMessage="No products found">
-
 						<p:column headerText="ID">
 							<h:outputText value="#{Product.entityId}" />
 						</p:column>
-
 						<p:column headerText="Name">
 							<h:outputText value="#{Product.name}" />
 						</p:column>
-
 						<p:column headerText="Val">
 							<h:outputText value="#{Product.val}" />
 						</p:column>
-
 						<p:column headerText="IVA %">
 							<h:outputText value="#{Product.IVA}" />
 						</p:column>
-
 						<p:column headerText="PVP €">
 							<h:outputText value="#{Product.PVP}" />
 						</p:column>
@@ -56,10 +51,7 @@
 				<p></p>
 			</div>
 		</div>
-
-		<div
-			class="ProductActions flex-container flex-item col-xs-10 col-xs-offset-1">
-
+		<div class="ProductActions flex-container flex-item col-xs-10 col-xs-offset-1">
 			<div class="Add flex-item">
 				<h3>
 					<span class="glyphicon glyphicon-folder-open"></span><b> Add</b>
@@ -100,14 +92,11 @@
 						update=":j_idt31:ProductTable" />
 				</h:form>
 			</div>
-
 			<div class="divider"></div>
-
 			<div class="Remove flex-item">
 				<h3>
 					<span class="glyphicon glyphicon-remove"></span><b> Delete</b>
 				</h3>
-
 				<h:form>		
 			Select a product (<b>ID</b>) to remove:
 					<br />
@@ -120,19 +109,15 @@
 						update=":j_idt31:ProductTable" />
 
 				</h:form>
-
 				<br /> <b>Or</b> <br /> <br />
 				<p:commandButton value="Clear all products"
 					action="#{ProductBean.clearTable()}" update=":j_idt31:ProductTable" />
 			</div>
-
 			<div class="divider"></div>
-
 			<div class="Edit flex-item">
 				<h3>
 					<span class="glyphicon glyphicon-edit"></span><b> Edit</b>
 				</h3>
-
 				<h:form style="text-align:left; width: 200px;">		
 			Select a product (<b>ID</b>) to edit:
 					<br />
@@ -144,6 +129,7 @@
 					<br />
 					<h:inputText style="width:90px;"
 						value="#{ProductBean.newProduct.name}" required="false" />
+						<span> </span>
 					<p:commandButton style="font-size:10px;" value="save name"
 						action="#{ProductBean.editProductName(ProductBean.newProduct.entityId, ProductBean.newProduct.name)}"
 						update=":j_idt31:ProductTable" />
@@ -153,6 +139,7 @@
 					<br />
 					<h:inputText style="width:90px;"
 						value="#{ProductBean.newProduct.val}" required="false" />
+						<span> </span>
 					<p:commandButton style="font-size:10px;" value="save val"
 						action="#{ProductBean.editProductVal(ProductBean.newProduct.entityId, ProductBean.newProduct.val)}"
 						update=":j_idt31:ProductTable" />
@@ -162,6 +149,7 @@
 					<br />
 					<h:inputText style="width:90px;"
 						value="#{ProductBean.newProduct.PVP}" required="false" />
+						<span> </span>
 					<p:commandButton style="font-size:10px;" value="save PVP"
 						action="#{ProductBean.editProductPVP(ProductBean.newProduct.entityId, ProductBean.newProduct.PVP)}"
 						update=":j_idt31:ProductTable" />
@@ -170,7 +158,6 @@
 					<h:outputText value="IVA: " />
 					<br />
 					<!--  <h:inputText style="width:90px;" value="#{ProductBean.newProduct.IVA}" required="true" /> -->
-					
 					<p:selectOneRadio style="font-size:12px;" id="IVA"
 						value="#{ProductBean.newProduct.IVA}">
 						<f:selectItem itemLabel="6" itemValue="6" />
@@ -182,7 +169,6 @@
 						update=":j_idt31:ProductTable" />
 					<br />
 					<br />
-
 				</h:form>
 			</div>
 		</div>
@@ -191,12 +177,10 @@
 		<p:button outcome="index" value="Back">
 		</p:button>
 	</div>
-
 	<div id="footer">
 		<ui:insert name="footer">
 			<ui:include src="/template/common/commonFooter.xhtml" />
 		</ui:insert>
 	</div>
-
 </h:body>
 </html>

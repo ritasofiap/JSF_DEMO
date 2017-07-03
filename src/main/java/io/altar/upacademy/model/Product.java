@@ -7,30 +7,25 @@ package io.altar.upacademy.model;
 import io.altar.upacademy.model.Entity;
 import io.altar.upacademy.model.Product;
 
+public class Product extends Entity {
 
-public class Product extends Entity{
-
-	//private Integer entityId;
+	// private Integer entityId;
 	private String name;
 	private double val;
 	private double IVA;
 	private double PVP;
-	
-	//private ArrayList<Product> productShelves;
-	
-	
-	public Product(){ //constr vazio
-	}
-	
-/*	public Product (String name, double val, double IVA, double PVP){
-		
-		this.name = name;
-		this.val = val;
-		this.IVA = IVA;
-		this.PVP = PVP;
-	}*/
 
-		
+	// private ArrayList<Product> productShelves;
+
+	public Product() { // constr vazio
+	}
+
+	/*
+	 * public Product (String name, double val, double IVA, double PVP){
+	 * 
+	 * this.name = name; this.val = val; this.IVA = IVA; this.PVP = PVP; }
+	 */
+
 	public double getVal() {
 		return val;
 	}
@@ -63,24 +58,22 @@ public class Product extends Entity{
 		this.name = name;
 	}
 
-	
-	
-/*	public ArrayList<Product> getProductShelves() {   //static???
-		return productShelves;
-	}
-
-	
-	public void setProductShelf(ArrayList<Product> productShelves) {
-		this.productShelves = productShelves;
-	}*/
-	
-
+	/*
+	 * public ArrayList<Product> getProductShelves() { //static??? return
+	 * productShelves; }
+	 * 
+	 * 
+	 * public void setProductShelf(ArrayList<Product> productShelves) {
+	 * this.productShelves = productShelves; }
+	 */
 
 	@Override
-	public String toString(){
-		return "Product ID: "+ getEntityId() + " | Name: " + getName() + " | Val: " + getVal() + " | IVA: " + getIVA()  + " | PVP: " + getPVP();
+	public String toString() {
+		return "Product ID: " + getEntityId() + " | Name: " + getName() + " | Val: " + getVal() + " | IVA: " + getIVA()
+				+ " | PVP: " + getPVP();
 	}
 }
 
-//		return "Product ID: "+ getEntityId() + " | Name: " + getName() + " | Val: " + getVal() + " | IVA: " + getIVA()  + " | PVP: " + getPVP() + " | Shelves: " + productShelves;
-
+// return "Product ID: "+ getEntityId() + " | Name: " + getName() + " | Val: " +
+// getVal() + " | IVA: " + getIVA() + " | PVP: " + getPVP() + " | Shelves: " +
+// productShelves;
