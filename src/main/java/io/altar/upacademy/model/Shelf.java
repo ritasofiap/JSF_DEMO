@@ -1,13 +1,15 @@
 package io.altar.upacademy.model;
 
-import java.util.ArrayList;
+import javax.persistence.Table;
 
+@javax.persistence.Entity
+@Table(name="shelf")
 public class Shelf extends Entity {
 
 	private String shelfLocal; // top, middle, bottom
 	private int shelfCapacity; // ex 0 a 50?
 	private double shelfDailyCost; // €
-	private ArrayList<Shelf> shelfProduct = new ArrayList<>();
+	//private ArrayList<Shelf> shelfProduct = new ArrayList<>();
 
 	public Shelf() {
 
@@ -43,13 +45,13 @@ public class Shelf extends Entity {
 		return shelfDailyCost;
 	}
 
-	public void setShelfProduct(ArrayList<Shelf> shelfProduct) {
+	/*public void setShelfProduct(ArrayList<Shelf> shelfProduct) {
 		this.shelfProduct = shelfProduct;
 	}
 
 	public void getShelfProduct(ArrayList<Shelf> shelfProduct) {
 		this.shelfProduct = shelfProduct;
-	}
+	}/*
 
 	/*
 	 * @Override public String toString(){ return "Shelf ID: "+ getEntityId() +

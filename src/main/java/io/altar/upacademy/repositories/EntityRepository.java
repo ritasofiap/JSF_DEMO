@@ -3,10 +3,13 @@ package io.altar.upacademy.repositories;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
+import javax.persistence.PersistenceContext;
+
 import io.altar.upacademy.model.Entity;
 
 import java.util.Collection;
 
+@PersistenceContext(unitName="repository")
 public class EntityRepository<E extends Entity> {
 
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>(); // long

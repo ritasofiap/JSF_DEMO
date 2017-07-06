@@ -1,5 +1,8 @@
 package io.altar.upacademy.model;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
+
 //import java.util.ArrayList;
 
 //import java.util.ArrayList;
@@ -7,9 +10,12 @@ package io.altar.upacademy.model;
 import io.altar.upacademy.model.Entity;
 import io.altar.upacademy.model.Product;
 
+@javax.persistence.Entity
+@Table(name="product")
 public class Product extends Entity {
 
 	// private Integer entityId;
+	@Column
 	private String name;
 	private double val;
 	private double IVA;
