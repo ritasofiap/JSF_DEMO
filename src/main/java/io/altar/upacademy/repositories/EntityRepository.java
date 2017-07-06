@@ -1,21 +1,22 @@
 package io.altar.upacademy.repositories;
 
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import io.altar.upacademy.model.Entity;
 
-import java.util.Collection;
 
-@PersistenceContext(unitName="repository")
 public class EntityRepository<E extends Entity> {
 
+	@PersistenceContext(unitName="database")
+	private EntityManager em;
+	
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>(); // long
-																		// ou
-																		// integer
-
+													// integer
 	// private List<E> listView = new ArrayList<>();
 
 	public void setEntities(LinkedHashMap<Integer, E> entities) {
@@ -41,7 +42,10 @@ public class EntityRepository<E extends Entity> {
 	// read------------------------------------------------
 	public E findByEntityId(Integer entityId) {
 		return entities.get(entityId);
+		
 	}
+	
+	//find(entityClass, primaryKey)
 
 	public int getEntityIndex(E entity) {
 		return index;
@@ -49,6 +53,9 @@ public class EntityRepository<E extends Entity> {
 
 	// add------------------------------------------------
 	public void addEntityId(E entity) {
+		
+		em.persist(entity);
+		
 		int newEntityId = getNextEntityId();
 		entity.setEntityId(newEntityId);
 		entities.put(entity.getEntityId(), entity);
