@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 
 import io.altar.upacademy.model.Entity;
 
-
+@PersistenceContext(unitName="database")
 public class EntityRepository<E extends Entity> {
 
-	@PersistenceContext(unitName="database")
+	
 	private EntityManager em;
 	
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>(); // long
@@ -54,7 +54,7 @@ public class EntityRepository<E extends Entity> {
 	// add------------------------------------------------
 	public void addEntityId(E entity) {
 		
-		em.persist(entity);
+		//em.persist(entity);
 		
 		int newEntityId = getNextEntityId();
 		entity.setEntityId(newEntityId);

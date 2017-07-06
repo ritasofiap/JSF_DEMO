@@ -1,11 +1,13 @@
 package io.altar.upacademy.model;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 
 @javax.persistence.Entity
 @Table(name="shelf")
 public class Shelf extends Entity {
 
+	@Column
 	private String shelfLocal; // top, middle, bottom
 	private int shelfCapacity; // ex 0 a 50?
 	private double shelfDailyCost; // €
