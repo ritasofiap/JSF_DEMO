@@ -8,12 +8,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import io.altar.upacademy.model.Entity;
+import io.altar.upacademy.model.Product;
 
 @PersistenceContext(unitName="database")
 public class EntityRepository<E extends Entity> {
 
 	
 	private EntityManager em;
+	
+	public void addEntity(Entity emp){
+		em.persist(emp);
+	}
 	
 	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>(); // long
 													// integer
@@ -53,12 +58,13 @@ public class EntityRepository<E extends Entity> {
 
 	// add------------------------------------------------
 	public void addEntityId(E entity) {
-		
-		//em.persist(entity);
-		
 		int newEntityId = getNextEntityId();
 		entity.setEntityId(newEntityId);
 		entities.put(entity.getEntityId(), entity);
+	}
+	
+	public void addEntityIdToDB(E entity) {
+		em.persist(entity);
 	}
 
 	// remove------------------------------------------------
@@ -67,8 +73,13 @@ public class EntityRepository<E extends Entity> {
 		entities.remove(entityId);
 	}
 	
-	//emp = em.find(Employee.class, entityId);
-	//em.remove(emp);
+	//Product prdt = em.find(Product.class, entityId);
+	
+	/*public void removeEntityFromDB(Integer entityId) {
+		prdt = em.find(Entity.class, entityId);
+		em.remove(prdt);
+	}*/
+		
 	
 	public void clearTable() {
 		entities.clear();
