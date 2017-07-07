@@ -13,16 +13,7 @@ import io.altar.upacademy.model.Product;
 @PersistenceContext(unitName="database")
 public class EntityRepository<E extends Entity> {
 
-	
-	private EntityManager em;
-	
-	public void addEntity(Entity emp){
-		em.persist(emp);
-	}
-	
-	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>(); // long
-													// integer
-	// private List<E> listView = new ArrayList<>();
+	private LinkedHashMap<Integer, E> entities = new LinkedHashMap<>();
 
 	public void setEntities(LinkedHashMap<Integer, E> entities) {
 		this.entities = entities;
@@ -32,25 +23,38 @@ public class EntityRepository<E extends Entity> {
 		return entities.values();
 	}
 
-	private int index = 0; // tava static
+	private int index = 0; 
 
-	public int getNextEntityId() { // long ou int //tava static
+	public int getNextEntityId() { 
 		return ++index;
 	}
 
-	/*
-	 * public List<E> getListView() { return listView; }
-	 * 
-	 * public void setListView(List<E> listView) { this.listView = listView; }
-	 */
-
+	
+	//DB-------------------------------------------
+	
+	private EntityManager em;
+	
+	//find(entityClass, primaryKey)
+	public Product findEProductInDB(Integer entityId){
+		return (Product) em.find(Entity.class, entityId);
+	}
+	
+	public void addEntityToDB(Entity entity){
+		em.persist(entity);
+	}
+	
+	public void removeEntityFromDB(Integer entityId) {
+		em.remove(findEProductInDB(entityId));
+	}
+	
+	public void editEntityDB(){ //no product ou shelf repo
+	}
+			
 	// read------------------------------------------------
 	public E findByEntityId(Integer entityId) {
 		return entities.get(entityId);
-		
 	}
 	
-	//find(entityClass, primaryKey)
 
 	public int getEntityIndex(E entity) {
 		return index;
@@ -63,23 +67,13 @@ public class EntityRepository<E extends Entity> {
 		entities.put(entity.getEntityId(), entity);
 	}
 	
-	public void addEntityIdToDB(E entity) {
-		em.persist(entity);
-	}
+	
 
 	// remove------------------------------------------------
 	public void removeEntity(Integer entityId) {
 		System.out.println(1);
 		entities.remove(entityId);
 	}
-	
-	//Product prdt = em.find(Product.class, entityId);
-	
-	/*public void removeEntityFromDB(Integer entityId) {
-		prdt = em.find(Entity.class, entityId);
-		em.remove(prdt);
-	}*/
-		
 	
 	public void clearTable() {
 		entities.clear();

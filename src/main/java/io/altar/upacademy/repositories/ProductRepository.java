@@ -35,6 +35,33 @@ public class ProductRepository extends EntityRepository<Product> {
 		((Product) ProductRepository.getInstance().findByEntityId(entityId)).setPVP(PVP);
 	}
 
+	
+	
+	
+	//---------Update DB?
+		
+	public void editProductNameDB(Integer entityId, String name) {
+	 	findEProductInDB(entityId).setName(name);		
+	}
+
+	public void editProductValDB(Integer entityId, Double val) {
+	 	findEProductInDB(entityId).setVal(val);	
+	}
+
+	public void editProductIVADB(Integer entityId, Double IVA) {
+	 	findEProductInDB(entityId).setIVA(IVA);	
+	}
+
+	public void editProductPVPDB(Integer entityId, Double PVP) {
+	 	findEProductInDB(entityId).setPVP(PVP);	
+	}
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 * public void
 	 * addProduct(){https://open.spotify.com/artist/54Xuca1P5nDqfKYZGDfHxl

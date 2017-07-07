@@ -15,7 +15,7 @@ public class ProductService {
 
 	// @Inject
 	// private ProductRepository productList;
-	private ProductRepository productList = ProductRepository.getInstance();
+	private ProductRepository productList = ProductRepository.getInstance(); //mudar pa DD!
 
 	public ProductRepository getProductList() {
 		return productList;
@@ -36,17 +36,47 @@ public class ProductService {
 	public ProductService() {
 	}
 
-	public void addToRep(Product product) {
+	//DB----CORRIGIR LIST; MUDAR PARA LISTA DA BD
+		public void addToRep(Product product) {
+			productList.addEntityId(product);
+		}
+		
+		public void removeFromRep(Integer entityId) {
+			productList.removeEntityFromTable(getProduct(entityId));
+		}
+		public void editProductName(Integer entityId, String name) {
+			productList.editProductNameDB(entityId, name);
+		}
+
+		public void editProductVal(Integer entityId, Double val) {
+			productList.editProductValDB(entityId, val);
+		}
+
+		public void editProductIVA(Integer entityId, Double IVA) {
+			productList.editProductIVADB(entityId, IVA);
+		}
+
+		public void editProductPVP(Integer entityId, Double PVP) {
+			productList.editProductPVPDB(entityId, PVP);
+		}
+		
+		
+		
+	//------
+	
+		public void clearTable() {
+			productList.clearTable();
+		}
+		
+	/*public void addToRep(Product product) {
 		productList.addEntityId(product);
 	}
-
+	
 	public void removeFromRep(Integer entityId) {
 		productList.removeEntityFromTable(getProduct(entityId));
 	}
-
-	public void clearTable() {
-		productList.clearTable();
-	}
+	
+	
 
 	public void editProductName(Integer entityId, String name) {
 		productList.editProductName(entityId, name);
@@ -63,6 +93,7 @@ public class ProductService {
 	public void editProductPVP(Integer entityId, Double PVP) {
 		productList.editProductPVP(entityId, PVP);
 	}
+	*/
 
 }
 
