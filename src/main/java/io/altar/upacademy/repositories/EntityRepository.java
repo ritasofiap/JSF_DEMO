@@ -66,7 +66,10 @@ public class EntityRepository<E extends Entity> {
 		System.out.println(1);
 		entities.remove(entityId);
 	}
-
+	
+	//emp = em.find(Employee.class, entityId);
+	//em.remove(emp);
+	
 	public void clearTable() {
 		entities.clear();
 	}
